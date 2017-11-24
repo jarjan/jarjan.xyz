@@ -17,7 +17,4 @@ $ npm start
 
 # generate static project
 $ npm run generate
-
-# deploy project to github pages
-$ npm run deploy
 ```
