@@ -1,9 +1,0 @@
-# AUTHOR
-
-  Zharzhan Kulmyrza @jarjan
-
-# TECHNOLOGY COLOPHON
-
-  HTML5, CSS3
-  Nuxt.js, Vue.js
-  GitHub

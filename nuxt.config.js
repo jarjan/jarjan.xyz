@@ -2,9 +2,6 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'spa',
-  generate: {
-    dir: 'docs'
-  },
 
   /*
   ** Headers of the page
