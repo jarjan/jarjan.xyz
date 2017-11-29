@@ -5,23 +5,13 @@ body {
 
 section {
   height: calc(100vh - 4em);
-  background-color: #1b1a22;
-  background-image: url(~/assets/img/back.jpg);
-  background-size: cover;
-  background-position: top center;
+  background-color: #060606;
+  background-image: url(~/assets/img/dark.jpg);
+  background-size: contain;
+  background-position: center right;
   background-repeat: no-repeat;
   padding: 2em;
   position: relative;
-}
-
-section:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(74, 144, 226, 0.8);
 }
 
 section > div {
@@ -46,7 +36,7 @@ small {
 }
 
 a {
-  color: #fff;
+  color: #4a90e2;
   display: inline-block;
   border-radius: 2px;
   padding: 0 0.1em;
@@ -55,7 +45,6 @@ a {
 
 a:hover {
   background: #fff;
-  color: #4a90e2;
   text-decoration: none;
 }
 
@@ -68,12 +57,4 @@ a > svg {
 
 a:hover > svg {
   fill: #4a90e2;
-}
-
-@media(max-width:30em) {
-  section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
