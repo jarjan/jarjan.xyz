@@ -1,9 +1,9 @@
 <template>
-  <div itemscope itemtype="http://schema.org/Person">
+  <section itemscope itemtype="http://schema.org/Person">
     <logo />
     <h1 itemprop="name">Zharzhan Kulmyrza</h1>
-    <p>Hi! I am <span itemprop="jobTitle">frontend developer</span> at <a href="http://nplus.tech">N+</a>.</p>
-    <p>Previously made frontend for <a href="https://hipo.kz">hipo.kz</a> and <a href="https://chocomart.kz">chocomart.kz</a></p>
+    <p>Hi! I am <span itemprop="jobTitle">frontend developer</span>.</p>
+    <p>Previously made frontend for <a href="http://petrel.ai">Petrel AI</a>, <a href="http://nplus.tech">N+</a>, <a href="https://hipo.kz">HiPO</a> and <a href="https://chocomart.kz">Chocomart</a></p>
     <p>For more check <a href="https://linkedin.com/in/zharzhan">linkedin</a> or <a href="/cv.pdf">my cv</a>.</p>
     <p>Drop me email <a href="mailto:zharzhan@gmail.com" itemprop="email">zharzhan@gmail.com</a> or follow on internet:</p>
     <p>
@@ -12,15 +12,73 @@
       <!-- <a href="https://t.me/zharzhan"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><title>Telegram icon</title><path d="M12.793 10.69c.57-1.56 2.66-7.49 2.994-9.044.38-1.76-.414-1.93-2.22-1.34-1.805.59-6.435 2.305-7.215 2.582-.78.277-4.573 1.552-5.36 1.932-1.606.862-.825 2.177.97 2.86 5.37 2.577 3.845 1.264 6.242 6.032.493 1.218 1.656 3.293 2.77 1.724.586-.892 1.37-3.52 1.82-4.747z" fill-rule="nonzero"/></svg></a> -->
       <a href="https://medium.com/@jarjan"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><title>Medium icon</title><path d="M127.445 29.754c-.025-.02-.045-.045-.075-.06l-.043-.02-38.533-19.24c-.26-.13-.535-.22-.81-.29-.35-.09-.704-.144-1.06-.144-1.476 0-2.945.74-3.74 2.03L61 48.03l27.84 45.176 38.723-62.838c.128-.21.067-.468-.118-.614M49 40v41l36 18-36-59m42 61.79l29.945 14.993c3.896 1.95 7.055.585 7.055-3.05V41.59l-37 60.2M5.89 11.647l-1.174-.587c-.68-.34-1.327-.5-1.912-.5C1.154 10.56 0 11.833 0 13.97v81.14c0 2.172 1.59 4.743 3.537 5.715l32.568 16.33c.85.424 1.66.625 2.39.625 2.06 0 3.505-1.592 3.505-4.263V30c0-.156-.088-.3-.23-.37L5.89 11.648z" fill-rule="evenodd"/></svg></a>
     </p>
-  </div>
+  </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from "./components/Logo.vue";
 
 export default {
   components: {
     Logo
   }
-}
+};
 </script>
+
+<style>
+body {
+  height: calc(100vh - 4em);
+  background-color: #060606;
+  background-image: url(/img/dark.jpg);
+  background-size: contain;
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 2em;
+  position: relative;
+}
+
+body > section {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  max-width: 60em;
+}
+
+h1 {
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+h1,
+p {
+  color: #fff;
+}
+
+p,
+small {
+  font-family: "PT Serif", serif;
+}
+
+a {
+  color: #4a90e2;
+  display: inline-block;
+  border-radius: 2px;
+  padding: 0 0.1em;
+  margin: 0 -0.1em;
+}
+
+a:hover {
+  background: #fff;
+  text-decoration: none;
+}
+
+a > svg {
+  fill: #fff;
+  padding: 0.2em;
+  width: 1em;
+  vertical-align: middle;
+}
+
+a:hover > svg {
+  fill: #4a90e2;
+}
+</style>
