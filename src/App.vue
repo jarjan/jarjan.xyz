@@ -3,7 +3,7 @@
     <logo />
     <h1 itemprop="name">Zharzhan Kulmyrza</h1>
     <p>Hi! I am <span itemprop="jobTitle">frontend developer</span>.</p>
-    <p>Previously made frontend for <a href="http://petrel.ai">Petrel AI</a>, <a href="http://nplus.tech">N+</a>, <a href="https://hipo.kz">HiPO</a> and <a href="https://chocomart.kz">Chocomart</a></p>
+    <p>Previously made frontend for <a href="http://petrel.ai">Petrel AI</a>, <a href="http://mycrm.kz">MyCRM</a>, <a href="http://nplus.tech">N+</a>, <a href="https://hipo.kz">HiPO</a> and <a href="https://chocomart.kz">Chocomart</a></p>
     <p>For more check <a href="https://linkedin.com/in/zharzhan">linkedin</a> or <a href="/cv.pdf">my cv</a>.</p>
     <p>Drop me email <a href="mailto:zharzhan@gmail.com" itemprop="email">zharzhan@gmail.com</a> or follow on internet:</p>
     <p>
