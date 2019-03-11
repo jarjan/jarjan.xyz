@@ -16,29 +16,27 @@ defaults:
       layout: "post"
 
 projects:
-  sort_by: pushed
+  sort_by: stars
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 9
+  limit: 6
   exclude:
-    forks: true
-    projects:
-      - tenge.party
-      - jjermany.blog
-      - svg-logos
+    # forks: true
+    # projects:
+    # - repo-name
 
-# social_media:
-# behance: your_username
-# dribbble: your_username
-# facebook: your_username
-linkedin: zharzhan
-# medium: @your_username
-# stackoverflow: your_user_id
-telegram: zharzhan
-twitter: jarjan
-# youtube: your_username
-# vk: your_username
+social_media:
+  # behance: your_username
+  # dribbble: your_username
+  # facebook: your_username
+  # medium: @your_username
+  # stackoverflow: your_user_id
+  twitter: jarjan
+  telegram: zharzhan
+  linkedin: zharzhan
+  # youtube: your_username
+  # vk: your_username
 
 topics:
   - name: CSS
@@ -46,8 +44,8 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
 
   - name: JavaScript
-    web_url: https://github.com/topics/js
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/js/js.png
+    web_url: https://github.com/topics/javascript
+    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/javascript/javascript.png
 
   - name: React
     web_url: https://github.com/topics/react
