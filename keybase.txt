@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/jarjan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jarjan.xyz
+  * I am jarjan (https://keybase.io/jarjan) on keybase.
+  * I have a public key with fingerprint AECE 975D DC95 659A 7822  1FBB BCE7 C971 D90F 9A43
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01011bb72af1b45c6ed867214c68b0ff2b3627694788dbae151f638dc459410f431e0a",
+      "fingerprint": "aece975ddc95659a78221fbbbce7c971d90f9a43",
+      "host": "keybase.io",
+      "key_id": "bce7c971d90f9a43",
+      "kid": "01011bb72af1b45c6ed867214c68b0ff2b3627694788dbae151f638dc459410f431e0a",
+      "uid": "ecfb7d962f8b7af8d5d4522f51333f19",
+      "username": "jarjan"
+    },
+    "service": {
+      "hostname": "jarjan.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1562704938,
+  "expire_in": 157680000,
+  "prev": "69344e39da04ee2e1d0befe19a56e520a730b8ec1eb967c98f20b4370d3afb11",
+  "seqno": 21,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.0
+Comment: https://keybase.io/crypto
+
+yMImAnicrVJdSFRBGN21TDRNRQqjjLpF6aZy5/7fFSxMFoTEfgx8MNaZe2fWu653
+t93VNBPSqLBIilR66EH0xZKK1Ac1kTRB05S0pyipQDKkUAoTSqy5Ug9Bj83LMGfO
+Od/5Pr6RuA22GPv0GyUxfu1Hj31iqKnCdnrfqqOGQX69mnHWMGV4/cI+HYfC7jJD
+Z5wMC1gAEJI5SAASRE3CuiLJHBA0SUEsIRziJU6WVEFWFB1BDERAJF7RNUFUBcAS
+gQeYhUw6QwzTg4OBoGGGqS3EGlZlUdc1VZREFcoKxwGCENKwrKky0FWWqFDgqbDU
+H7IUNByCIZxp+ClGH+71eP/g/+fcFet2WCNI1lWJIwqSIVF0URdEjiMi4HmeANUi
+hnDQhOWYsr0w6IUmU5vOUKzS0LA1VquPv/4zq6rPUV0g6A/7Nb+P4qXhcCDktHTh
+6oBFPIuR+7eFGxmmTmdIFZU4GDL8JuMElKmFDcsTiLQdVlB5JZ3BVQEjiN2GxRBl
+SWHpsergSmopqbwgYF7VIStgzGGgswgTDFQoSljkWCjzLFKwBjBSJTpbhXAsEniZ
+1XlIEACM1dQZ0884OUBzQg/1DBkeE4YrgpipHX5SvNFmj7FtioywlssWE53wZ+Ui
+t0T9zD+a46vgpxPMfq7tgLf5xtDxFd/Oa6u1Lodj7OT7p8eS6j/72kcqGy4l7373
+TXtQ0PxhBkXlf+xr6p1KrbMvu11tW9snkju6dt2LLXGl3pYX5x33n8fXd03PzzaP
+2R9FFbTu7+nmT3wdvx6df3Eh4fwqt9KTdkgevNvfnnvh0+G32Q0DrTNTdnf5UHR1
+UWF24eP0hWFl76TxrDhnuejIjqyUjPFbiquUzfaIByfz4kYKIgZfLI52LM2u9HV+
+z33l21f20pa2Oav7IbFtayzxrK3OubwZd9ZOlV7tW/IM3Hzd2JyX0hJrJu2py2st
+cbTM5SRe6fiSWeW9rIzaOrcv9f4CubA/SA==
+=ByG6
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jarjan
+
+==================================================================
