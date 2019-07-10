@@ -6,59 +6,47 @@ I hereby claim:
 
   * I am an admin of https://jarjan.xyz
   * I am jarjan (https://keybase.io/jarjan) on keybase.
-  * I have a public key with fingerprint AECE 975D DC95 659A 7822  1FBB BCE7 C971 D90F 9A43
+  * I have a public key ASB5IIEuu-ecyUbbj37PW1p7qeoCnubLz_xlWp9FjV6ZjQo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "01011bb72af1b45c6ed867214c68b0ff2b3627694788dbae151f638dc459410f431e0a",
-      "fingerprint": "aece975ddc95659a78221fbbbce7c971d90f9a43",
+      "eldest_kid": "0120f4b067007e30aab0f7d943ad0e0d0f88364d67b37c03caa2614b340c6fb6b6750a",
       "host": "keybase.io",
-      "key_id": "bce7c971d90f9a43",
-      "kid": "01011bb72af1b45c6ed867214c68b0ff2b3627694788dbae151f638dc459410f431e0a",
+      "kid": "01207920812ebbe79cc946db8f7ecf5b5a7ba9ea029ee6cbcffc655a9f458d5e998d0a",
       "uid": "ecfb7d962f8b7af8d5d4522f51333f19",
       "username": "jarjan"
     },
+    "merkle_root": {
+      "ctime": 1562750469,
+      "hash": "40c6f00ebe78c24aa2172a8f5cfe5e7c9b2f66264144e9b8a06d1ae51aa2da6d680f99af7900c34140bde9734006663ef5712652bbb0aefb06e0f3cf3a8221b1",
+      "hash_meta": "e2bed3297cfa72ec0350bce7efd5f4ffdd9045c1313e4c9555819cf4a078e2fd",
+      "seqno": 5728544
+    },
     "service": {
+      "entropy": "pOhzaSTr8yluCG0Z6R1smZMa",
       "hostname": "jarjan.xyz",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 1
+    "version": 2
   },
-  "ctime": 1562704938,
-  "expire_in": 157680000,
-  "prev": "69344e39da04ee2e1d0befe19a56e520a730b8ec1eb967c98f20b4370d3afb11",
-  "seqno": 21,
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.1.0"
+  },
+  "ctime": 1562750481,
+  "expire_in": 504576000,
+  "prev": "c420aab5090e77318865b59e1be03097281d59e323b505495d7f6f32410bc025",
+  "seqno": 31,
   "tag": "signature"
 }
 
 which yields the signature:
 
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.0
-Comment: https://keybase.io/crypto
-
-yMImAnicrVJdSFRBGN21TDRNRQqjjLpF6aZy5/7fFSxMFoTEfgx8MNaZe2fWu653
-t93VNBPSqLBIilR66EH0xZKK1Ac1kTRB05S0pyipQDKkUAoTSqy5Ug9Bj83LMGfO
-Od/5Pr6RuA22GPv0GyUxfu1Hj31iqKnCdnrfqqOGQX69mnHWMGV4/cI+HYfC7jJD
-Z5wMC1gAEJI5SAASRE3CuiLJHBA0SUEsIRziJU6WVEFWFB1BDERAJF7RNUFUBcAS
-gQeYhUw6QwzTg4OBoGGGqS3EGlZlUdc1VZREFcoKxwGCENKwrKky0FWWqFDgqbDU
-H7IUNByCIZxp+ClGH+71eP/g/+fcFet2WCNI1lWJIwqSIVF0URdEjiMi4HmeANUi
-hnDQhOWYsr0w6IUmU5vOUKzS0LA1VquPv/4zq6rPUV0g6A/7Nb+P4qXhcCDktHTh
-6oBFPIuR+7eFGxmmTmdIFZU4GDL8JuMElKmFDcsTiLQdVlB5JZ3BVQEjiN2GxRBl
-SWHpsergSmopqbwgYF7VIStgzGGgswgTDFQoSljkWCjzLFKwBjBSJTpbhXAsEniZ
-1XlIEACM1dQZ0884OUBzQg/1DBkeE4YrgpipHX5SvNFmj7FtioywlssWE53wZ+Ui
-t0T9zD+a46vgpxPMfq7tgLf5xtDxFd/Oa6u1Lodj7OT7p8eS6j/72kcqGy4l7373
-TXtQ0PxhBkXlf+xr6p1KrbMvu11tW9snkju6dt2LLXGl3pYX5x33n8fXd03PzzaP
-2R9FFbTu7+nmT3wdvx6df3Eh4fwqt9KTdkgevNvfnnvh0+G32Q0DrTNTdnf5UHR1
-UWF24eP0hWFl76TxrDhnuejIjqyUjPFbiquUzfaIByfz4kYKIgZfLI52LM2u9HV+
-z33l21f20pa2Oav7IbFtayzxrK3OubwZd9ZOlV7tW/IM3Hzd2JyX0hJrJu2py2st
-cbTM5SRe6fiSWeW9rIzaOrcv9f4CubA/SA==
-=ByG6
------END PGP MESSAGE-----
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeSCBLrvnnMlG249+z1tae6nqAp7my8/8ZVqfRY1emY0Kp3BheWxvYWTESpcCH8QgxCCqtQkOdzGIZbWeG+AwlygdWeMjtQVJXX9vMkELwCXEIOO6MYwtOmUxtM2jLkW7ws2QbalxzyNd5CtXnRPGs6eFAgHCo3NpZ8RAQS+SHQEbSJalOGO3PMI3DChXMbdzpgK1yjy0Oc8S1VXbupwvtpCd83whjp5e1tppkKgi1r7YSD8awbIT2rIgDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKE3DJzlXf/amcbRODun0+jFgtZEItc1slS2dTYq/VNTo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
