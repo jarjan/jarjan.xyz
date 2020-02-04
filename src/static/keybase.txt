@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jarjan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jarjan.xyz
+  * I am jarjan (https://keybase.io/jarjan) on keybase.
+  * I have a public key ASB5IIEuu-ecyUbbj37PW1p7qeoCnubLz_xlWp9FjV6ZjQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120f4b067007e30aab0f7d943ad0e0d0f88364d67b37c03caa2614b340c6fb6b6750a",
+      "host": "keybase.io",
+      "kid": "01207920812ebbe79cc946db8f7ecf5b5a7ba9ea029ee6cbcffc655a9f458d5e998d0a",
+      "uid": "ecfb7d962f8b7af8d5d4522f51333f19",
+      "username": "jarjan"
+    },
+    "merkle_root": {
+      "ctime": 1562750469,
+      "hash": "40c6f00ebe78c24aa2172a8f5cfe5e7c9b2f66264144e9b8a06d1ae51aa2da6d680f99af7900c34140bde9734006663ef5712652bbb0aefb06e0f3cf3a8221b1",
+      "hash_meta": "e2bed3297cfa72ec0350bce7efd5f4ffdd9045c1313e4c9555819cf4a078e2fd",
+      "seqno": 5728544
+    },
+    "service": {
+      "entropy": "pOhzaSTr8yluCG0Z6R1smZMa",
+      "hostname": "jarjan.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.1.0"
+  },
+  "ctime": 1562750481,
+  "expire_in": 504576000,
+  "prev": "c420aab5090e77318865b59e1be03097281d59e323b505495d7f6f32410bc025",
+  "seqno": 31,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeSCBLrvnnMlG249+z1tae6nqAp7my8/8ZVqfRY1emY0Kp3BheWxvYWTESpcCH8QgxCCqtQkOdzGIZbWeG+AwlygdWeMjtQVJXX9vMkELwCXEIOO6MYwtOmUxtM2jLkW7ws2QbalxzyNd5CtXnRPGs6eFAgHCo3NpZ8RAQS+SHQEbSJalOGO3PMI3DChXMbdzpgK1yjy0Oc8S1VXbupwvtpCd83whjp5e1tppkKgi1r7YSD8awbIT2rIgDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKE3DJzlXf/amcbRODun0+jFgtZEItc1slS2dTYq/VNTo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jarjan
+
+==================================================================
