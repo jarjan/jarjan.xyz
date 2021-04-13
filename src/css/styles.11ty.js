@@ -6,11 +6,14 @@ const fileName = "styles.css";
 
 module.exports = class {
   async data() {
-    const rawFilepath = path.join(__dirname, `../_includes/postcss/${fileName}`);
+    const rawFilepath = path.join(
+      __dirname,
+      `../_includes/postcss/${fileName}`
+    );
     return {
       permalink: `css/${fileName}`,
       rawFilepath,
-      rawCss: await fs.readFileSync(rawFilepath)
+      rawCss: await fs.readFileSync(rawFilepath),
     };
   }
 
@@ -21,11 +24,11 @@ module.exports = class {
       require("autoprefixer"),
       require("@fullhuman/postcss-purgecss")({
         content: ["./src/**/*.html", "./src/**/*.njk"],
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       }),
-      require("cssnano")
+      require("cssnano"),
     ])
       .process(rawCss, { from: rawFilepath })
-      .then(result => result.css);
+      .then((result) => result.css);
   }
 };
