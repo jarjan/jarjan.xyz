@@ -27,7 +27,7 @@
     "cssnano": "5.0.2",
     "postcss": "8.3.0",
     "postcss-import": "14.0.2",
-    "prettier": "2.3.0",
+    "prettier": "2.3.2",
     "tailwindcss": "2.1.2"
   }
 }
