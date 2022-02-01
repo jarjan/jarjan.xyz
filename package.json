@@ -21,7 +21,7 @@
   "license": "MIT",
   "homepage": "https://jarjan.xyz",
   "devDependencies": {
-    "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy": "1.0.0",
     "@fullhuman/postcss-purgecss": "4.0.3",
     "autoprefixer": "10.4.0",
     "cssnano": "5.0.11",
