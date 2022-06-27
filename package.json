@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Personal website of Zharzhan Kulmyrza",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve"
