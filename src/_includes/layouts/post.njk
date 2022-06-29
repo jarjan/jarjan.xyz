@@ -1,11 +1,12 @@
 ---
 layout: layouts/base.njk
 ---
-
-<section class="pt-5">
-  <h1 class="text-4xl font-extrabold">{{ title }}</h1>
-  <p class="text-sm text-slate-500 dark:text-slate-300">Posted on {{ page.date.toLocaleDateString('en-GB') }}</p>
-  <div class="py-5 max-w-screen-md">
+<section class="flex flex-col gap-5">
+  <header>
+    <h1 class="text-4xl font-extrabold">{{ title }}</h1>
+    <p class="text-sm text-slate-500 dark:text-slate-300">{{ page.date.toDateString() }}</p>
+  </header>
+  <div class="max-w-screen-md">
     {{ content | safe }}
   </div>
 </section>

@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Жаржан Құлмырза
 ---
 
-<div class="py-5 flex flex-col gap-5">
+<div class="flex flex-col gap-5">
   <section id="about-me">
     <h2 class="text-2xl font-bold">About me</h2>
     <p class="leading-normal">
@@ -42,7 +42,7 @@ title: Жаржан Құлмырза
     </h2>
     {%- for post in collections.posts | reverse -%}
       <a class="text-xl link" href={{ post.url }}>{{ post.data.title }}</a>
-      <span class="text-xs text-slate-500 dark:text-slate-300">{{ post.date.toLocaleDateString('en-GB') }}</span>
+      <span class="text-xs text-slate-500 dark:text-slate-300">{{ post.date.toDateString() }}</span>
       <br/>
     {%- endfor -%}
   </section>
