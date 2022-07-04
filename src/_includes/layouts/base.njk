@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="generator" content="{{ eleventy.generator }}"/>
     <title>{{ title }}</title>
-    <meta name="description" content="{{ description or 'Frontend Web Engineer' }}"/>
+    <meta name="description" content="{{ description }}"/>
     <style type="text/css">
       {{googleFontsStylesheet|safe}}
     </style>
@@ -56,9 +56,24 @@
           </g>
         </svg>
       </a>
-      <div>
-        <p class="text-2xl font-extrabold">Zharzhan Kulmyrza</p>
-        <p class="text-slate-500 dark:text-slate-300">Frontend Web Engineer</p>
+      <div class="flex-grow">
+        <p class="text-2xl font-extrabold">
+          {{ 'Жаржан Құлмырза' if 'kk' in lang }}
+          {{ 'Zharzhan Kulmyrza' if 'en' in lang }}
+        </p>
+        <p class="text-slate-500 dark:text-slate-300">
+          {{ 'Фронтенд веб инженері' if 'kk' in lang }}
+          {{ 'Frontend Web Engineer' if 'en' in lang }}
+        </p>
+      </div>
+      <div class="text-right">
+        {% if '/post' in page.url %}
+          <!-- Maybe add share buttons or something else for post? -->
+        {% elif 'kk' in lang %}
+          <a class="link text-xs" href="/en">english</a>
+        {% elif 'en' in lang %}
+          <a class="link text-xs" href="/kk">қазақша</a>
+        {% endif %}
       </div>
     </header>
     <main class="flex-1">
@@ -66,10 +81,18 @@
     </main>
     <footer class="py-1">
       <p class="text-xs">
+        {% if 'kk' in lang %}
+          <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өскен.
+        <span role="img" aria-label="Германия">🇩🇪</span>-да өмір сүріп код жазып.
+        <br/>
+        © Жаржан Құлмырза 1991 – {{ currentYear }}
+        {% endif %}
+        {% if 'en' in lang %}
         Born and raised in <span role="img" aria-label="Kazakhstan">🇰🇿</span>.
         Living and coding in <span role="img" aria-label="Germany">🇩🇪</span>.
         <br/>
         © Zharzhan Kulmyrza 1991 – {{ currentYear }}
+        {% endif %}
       </p>
     </footer>
     <script type='application/ld+json'>
