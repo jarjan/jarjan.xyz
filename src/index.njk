@@ -24,7 +24,7 @@ permalink: "en/index.html"
   </section>
   <section id="contacts">
     <h2 class="text-2xl font-bold">Contacts and links</h2>
-    {% include 'contact-and-links.njk' %}
+    {% include 'contacts_links.njk' %}
   </section>
   <section id="projects">
     <h2 class="text-2xl font-bold">Projects</h2>
@@ -55,7 +55,7 @@ permalink: "en/index.html"
     </h2>
     {%- for post in collections.posts | reverse -%}
       <a class="text-xl link" href="{{ post.url }}">{{ post.data.title }}</a>
-      <span class="text-xs text-slate-500 dark:text-slate-300">{{ post.date.toDateString() }}</span>
+      <span class="text-xs text-slate-500 dark:text-slate-300">{{ post.date.toLocaleDateString("kk-KZ") }}</span>
       <br/>
     {%- endfor -%}
   </section>
