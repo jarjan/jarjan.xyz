@@ -4,8 +4,10 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{html,js,njk}"],
   theme: {
-    fontFamily: {
-      sans: ["Alegreya Sans", ...defaultTheme.fontFamily.sans],
+    extend: {
+      fontFamily: {
+        sans: ["Alegreya Sans", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
 };
