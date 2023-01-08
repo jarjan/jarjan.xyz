@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="generator" content="{{ eleventy.generator }}" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="generator" content="{{ eleventy.generator }}"/>
     <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}" />
+    <meta name="description" content="{{ description }}"/>
     <style type="text/css">
-      {{ googleFontsStylesheet | safe }}
-    </style>
-    <link rel="stylesheet" href="/css/styles.css" />
+      {{googleFontsStylesheet | safe}}</style>
+    <link rel="stylesheet" href="/css/styles.css"/>
     <link
       rel="alternate"
       href="/feed.xml"
       type="application/atom+xml"
-      title="Multi-language blog of Zharzhan Kulmyrza on various topics."
-    />
-    <link rel="me" href="https://mstdn.social/@jarjan" />
+      title="Multi-language blog of Zharzhan Kulmyrza on various topics."/>
+    <link rel="me" href="https://mstdn.social/@jarjan"/>
     <script>
       // Applying dark mode
       if (
         localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        document.documentElement.classList.add("dark");
+        document
+          .documentElement
+          .classList
+          .add("dark");
       } else {
-        document.documentElement.classList.remove("dark");
+        document
+          .documentElement
+          .classList
+          .remove("dark");
       }
       function toggleTheme() {
-        if (document.documentElement.classList.contains("dark")) {
+        if (document
+            .documentElement
+            .classList
+            .contains("dark")) {
           localStorage.theme = "light";
         } else {
           localStorage.theme = "dark";
         }
-        document.documentElement.classList.toggle("dark");
+        document
+          .documentElement
+          .classList
+          .toggle("dark");
       }
     </script>
   </head>
-  <body
-    class="h-screen flex flex-col gap-5 p-5 sm:p-10 bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50"
-  >
+  <body class="h-screen flex flex-col gap-5 p-5 sm:p-10 bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
     <header class="flex gap-5 items-center">
-      <a href="/{{ lang }}">
-        <svg
-          class="w-16"
-          viewbox="0 0 295 295"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      <a href="/">
+        <svg class="w-16" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
-            <path fill="#5990dc" d="M0 0h295v295H0z" />
+            <path fill="#5990dc" d="M0 0h295v295H0z"/>
             <path
               d="M166.44 188.184c0 4.512.432 8.568 1.296 12.168.864 3.6 2.304 6.672 4.32 9.216 2.016 2.544 4.68 4.512 7.992 5.904 3.312
                 1.392 7.416 2.088 12.312 2.088 1.632 0 3.312-.072 5.04-.216a25.244 25.244 0 0 0 5.04-.936l-1.152-19.152c-1.728.864-3.6
                 1.296-5.616 1.296-1.824 0-3.264-.48-4.32-1.44-1.056-.96-1.824-2.16-2.304-3.6a17.82 17.82 0 0 1-.864-4.608 76.558 76.558 0
                 0 1-.144-4.464v-71.424h-21.6v75.168z"
-              fill="#FFF"
-            />
+              fill="#FFF"/>
             <path
               d="M165 89.576c0-3.456 1.224-6.408 3.672-8.856 2.448-2.448 5.4-3.672 8.856-3.672 3.456 0 6.408 1.224 8.856 3.672 2.448
                 2.448 3.672 5.4 3.672 8.856 0 3.456-1.224 6.408-3.672 8.856-2.448 2.448-5.4 3.672-8.856 3.672-3.456
                 0-6.408-1.224-8.856-3.672-2.448-2.448-3.672-5.4-3.672-8.856z"
               fill="#C40F25"
-              onclick="toggleTheme();return false;"
-            />
+              onclick="toggleTheme();return false;"/>
             <path
               d="M156.072 148.872c0 4.704-.408 9.264-1.224 13.68-.816 4.416-2.376 8.328-4.68 11.736-2.304 3.408-5.592 6.144-9.864
                 8.208-4.272 2.064-9.864 3.096-16.776 3.096-8.064 0-14.88-1.92-20.448-5.76s-9.168-9.84-10.8-18l20.592-5.04c.288 2.496
                 1.416 4.608 3.384 6.336 1.968 1.728 4.2 2.592 6.696 2.592 2.592 0 4.608-.648 6.048-1.944 1.44-1.296 2.496-2.904
                 3.168-4.824.672-1.92 1.08-4.008 1.224-6.264.144-2.256.216-4.344.216-6.264V81.048h22.464v67.824z"
-              fill="#FFF"
-            />
+              fill="#FFF"/>
           </g>
         </svg>
       </a>
@@ -89,11 +86,11 @@
       </div>
       <div class="text-right">
         {% if '/post' in page.url %}
-        <!-- Maybe add share buttons or something else for post? -->
+          <!-- Maybe add share buttons or something else for post? -->
         {% elif 'kk' in lang %}
-        <a class="link text-xs" href="/en">english</a>
+          <a class="link text-xs" href="/en">english</a>
         {% elif 'en' in lang %}
-        <a class="link text-xs" href="/kk">қазақша</a>
+          <a class="link text-xs" href="/kk">қазақша</a>
         {% endif %}
       </div>
     </header>
@@ -103,14 +100,14 @@
     <footer class="py-1">
       <p class="text-xs">
         {% if 'kk' in lang %}
-        <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
-        <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір
-        сүремін. <br />
-        © Жаржан Құлмырза {{ currentYear }}
-        {% endif %} {% if 'en' in lang %} Born and raised in
-        <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
-        <span role="img" aria-label="Germany">🇩🇪</span>. <br />
-        © Zharzhan Kulmyrza {{ currentYear }}
+          <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
+          <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір
+                                сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
+        {% endif %}
+        {% if 'en' in lang %}
+          Born and raised in
+          <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
+          <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
         {% endif %}
       </p>
     </footer>

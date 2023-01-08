@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+  font-size: 150%;
+}
+
 @layer components {
   .link {
     @apply p-1 -m-1 text-blue-600 underline ease-in-out transition-colors hover:text-white hover:bg-blue-600 hover:relative hover:z-10;
