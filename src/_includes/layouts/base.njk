@@ -76,12 +76,18 @@
       </a>
       <div class="flex-grow">
         <p class="text-lg font-extrabold">
-          {{ 'Жаржан Құлмырза' if 'kk' in lang }}
-          {{ 'Zharzhan Kulmyrza' if 'en' in lang }}
+          {% if 'kk' in lang %}
+            Жаржан Құлмырза
+          {% else %}
+            Zharzhan Kulmyrza
+          {% endif %}
         </p>
         <p class="text-xs text-slate-500 dark:text-slate-300">
-          {{ 'Фронтенд уеб инженері' if 'kk' in lang }}
-          {{ 'Frontend Web Engineer' if 'en' in lang }}
+          {% if 'kk' in lang %}
+            Фронтенд уеб инженері
+          {% else %}
+            Frontend Web Engineer
+          {% endif %}
         </p>
       </div>
       <div class="text-right text-xs">
