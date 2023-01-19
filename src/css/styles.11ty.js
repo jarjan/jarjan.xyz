@@ -23,7 +23,7 @@ module.exports = class {
       require("tailwindcss")("./tailwind.config.js"),
       require("autoprefixer"),
       require("@fullhuman/postcss-purgecss")({
-        content: ["./src/**/*.html", "./src/**/*.njk"],
+        content: ["./src/**/*.html", "./src/**/*.njk", "./src/**/*.md"],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       }),
       require("cssnano"),

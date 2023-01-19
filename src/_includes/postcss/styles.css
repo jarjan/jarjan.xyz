@@ -8,7 +8,14 @@ html {
 }
 
 @layer components {
+  .post a,
   .link {
     @apply p-1 -m-1 text-blue-600 underline ease-in-out transition-colors hover:text-white hover:bg-blue-600 hover:relative hover:z-10;
+  }
+  .post h2 {
+    @apply text-2xl my-1;
+  }
+  .post p {
+    @apply mb-1;
   }
 }

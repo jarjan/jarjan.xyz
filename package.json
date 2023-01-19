@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve --incremental"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "node-fetch": "3.3.0",
     "postcss": "8.4.21",
     "postcss-import": "15.1.0",
-    "prettier": "2.8.2",
+    "prettier": "2.8.3",
     "tailwindcss": "3.2.4"
   }
 }
