@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@11ty/eleventy': 2.0.0-beta.2
+  '@11ty/eleventy': 2.0.0
   '@11ty/eleventy-plugin-rss': 1.2.0
   '@fullhuman/postcss-purgecss': 5.0.0
   autoprefixer: 10.4.13
@@ -9,11 +9,11 @@ specifiers:
   node-fetch: 3.3.0
   postcss: 8.4.21
   postcss-import: 15.1.0
-  prettier: 2.8.3
-  tailwindcss: 3.2.4
+  prettier: 2.8.4
+  tailwindcss: 3.2.6
 
 devDependencies:
-  '@11ty/eleventy': 2.0.0-beta.2
+  '@11ty/eleventy': 2.0.0
   '@11ty/eleventy-plugin-rss': 1.2.0
   '@fullhuman/postcss-purgecss': 5.0.0_postcss@8.4.21
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -21,8 +21,8 @@ devDependencies:
   node-fetch: 3.3.0
   postcss: 8.4.21
   postcss-import: 15.1.0_postcss@8.4.21
-  prettier: 2.8.3
-  tailwindcss: 3.2.4_postcss@8.4.21
+  prettier: 2.8.4
+  tailwindcss: 3.2.6_postcss@8.4.21
 
 packages:
 
@@ -42,7 +42,7 @@ packages:
       finalhandler: 1.2.0
       mime: 3.0.0
       minimist: 1.2.7
-      morphdom: 2.6.1
+      morphdom: 2.7.0
       please-upgrade-node: 3.2.0
       ssri: 8.0.1
       ws: 8.12.0
@@ -69,8 +69,8 @@ packages:
       normalize-path: 3.0.0
     dev: true
 
-  /@11ty/eleventy/2.0.0-beta.2:
-    resolution: {integrity: sha512-nH9uxixBqvgT7eCT2PcVvbWPlisv/fc2Me4jpAiiu96HsNF1IK/kSRpDhWUXV9HjXfCN5Hi+wcI/ZXm+5bYF6g==}
+  /@11ty/eleventy/2.0.0:
+    resolution: {integrity: sha512-heNLjt1FD2nx7fvidIgA4zrIvxuslgBK0w5/Ckr5iape1CoLzmDx1uIxPa66Atr1M6YzwG9hcOxoZUYV7PfLXw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -130,8 +130,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@babel/parser/7.20.7:
-    resolution: {integrity: sha512-T3Z9oHybU+0vZlY9CiDSJQTD5ZapcW18ZctFMi0MOAl/4BjFF4ul7NVSARLdbGO5vDqy9eQiGTV0LtKfvCYvcg==}
+  /@babel/parser/7.20.15:
+    resolution: {integrity: sha512-DI4a1oZuf8wC+oAJA9RW6ga3Zbe8RZFt7kD9i4qAspz3I/yHet1VvC3DiSy/fsUvv5pvJuNPh0LPOdCcqinDPg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
@@ -401,7 +401,7 @@ packages:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
     dependencies:
       function-bind: 1.1.1
-      get-intrinsic: 1.1.3
+      get-intrinsic: 1.2.0
     dev: true
 
   /camelcase-css/2.0.1:
@@ -488,7 +488,7 @@ packages:
   /constantinople/4.0.1:
     resolution: {integrity: sha512-vCrqcSIq4//Gx74TXXCGnHpulY1dskqLTFGDmhrGxzeXL8lF8kvXv6mpNWlJj1uD4DW23D4ljAqbY4RRaaUZIw==}
     dependencies:
-      '@babel/parser': 7.20.7
+      '@babel/parser': 7.20.15
       '@babel/types': 7.20.7
     dev: true
 
@@ -846,8 +846,8 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /get-intrinsic/1.1.3:
-    resolution: {integrity: sha512-QJVz1Tj7MS099PevUG5jvnt9tSkXN8K14dxQlikJuPt4uD9hHAHjLyLBiLR5zELelBdD9QNRAXZzsJx0WaDL9A==}
+  /get-intrinsic/1.2.0:
+    resolution: {integrity: sha512-L049y6nFOuom5wGyRc3/gdTLO94dySVKRACj1RmJZBQXlbTMhtNIgkWkUHq+jYmZvKf14EW1EoJnnjbmoHij0Q==}
     dependencies:
       function-bind: 1.1.1
       has: 1.0.3
@@ -1237,8 +1237,8 @@ packages:
     resolution: {integrity: sha512-iSAJLHYKnX41mKcJKjqvnAN9sf0LMDTXDEvFv+ffuRR9a1MIuXLjMNL6EsnDHSkKLTWNqQQ5uo61P4EbU4NU+Q==}
     dev: true
 
-  /morphdom/2.6.1:
-    resolution: {integrity: sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==}
+  /morphdom/2.7.0:
+    resolution: {integrity: sha512-8L8DwbdjjWwM/aNqj7BSoSn4G7SQLNiDcxCnMWbf506jojR6lNQ5YOmQqXEIE8u3C492UlkN4d0hQwz97+M1oQ==}
     dev: true
 
   /ms/2.0.0:
@@ -1494,11 +1494,11 @@ packages:
       resolve: 1.22.1
     dev: true
 
-  /postcss-js/4.0.0_postcss@8.4.21:
-    resolution: {integrity: sha512-77QESFBwgX4irogGVPgQ5s07vLvFqWr228qZY+w6lW599cRlK/HmnlivnnVUxkjHnCu4J16PDMHcH+e+2HbvTQ==}
+  /postcss-js/4.0.1_postcss@8.4.21:
+    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
-      postcss: ^8.3.3
+      postcss: ^8.4.21
     dependencies:
       camelcase-css: 2.0.1
       postcss: 8.4.21
@@ -1796,8 +1796,8 @@ packages:
       posthtml-render: 3.0.0
     dev: true
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -2097,8 +2097,8 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /tailwindcss/3.2.4_postcss@8.4.21:
-    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
+  /tailwindcss/3.2.6_postcss@8.4.21:
+    resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
@@ -2120,7 +2120,7 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.21
       postcss-import: 14.1.0_postcss@8.4.21
-      postcss-js: 4.0.0_postcss@8.4.21
+      postcss-js: 4.0.1_postcss@8.4.21
       postcss-load-config: 3.1.4_postcss@8.4.21
       postcss-nested: 6.0.0_postcss@8.4.21
       postcss-selector-parser: 6.0.11
@@ -2201,7 +2201,7 @@ packages:
     resolution: {integrity: sha512-RNGKj82nUPg3g5ygxkQl0R937xLyho1J24ItRCBTr/m1YnZkzJy1hUiHUJrc/VlsDQzsCnInEGSg3bci0Lmd4w==}
     engines: {node: '>= 10.0.0'}
     dependencies:
-      '@babel/parser': 7.20.7
+      '@babel/parser': 7.20.15
       '@babel/types': 7.20.7
       assert-never: 1.2.1
       babel-walk: 3.0.0-canary-5
