@@ -20,7 +20,7 @@
   "license": "MIT",
   "homepage": "https://jarjan.xyz",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@fullhuman/postcss-purgecss": "5.0.0",
     "autoprefixer": "10.4.13",
