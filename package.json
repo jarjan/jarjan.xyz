@@ -24,7 +24,7 @@
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@fullhuman/postcss-purgecss": "5.0.0",
     "autoprefixer": "10.4.13",
-    "cssnano": "5.1.14",
+    "cssnano": "6.0.1",
     "node-fetch": "3.3.0",
     "postcss": "8.4.21",
     "postcss-import": "15.1.0",
