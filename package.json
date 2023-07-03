@@ -20,15 +20,15 @@
   "license": "MIT",
   "homepage": "https://jarjan.xyz",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
     "@fullhuman/postcss-purgecss": "5.0.0",
-    "autoprefixer": "10.4.13",
-    "cssnano": "5.1.14",
-    "node-fetch": "3.3.0",
-    "postcss": "8.4.21",
+    "autoprefixer": "10.4.14",
+    "cssnano": "6.0.1",
+    "node-fetch": "3.3.1",
+    "postcss": "8.4.24",
     "postcss-import": "15.1.0",
-    "prettier": "2.8.4",
-    "tailwindcss": "3.2.6"
+    "prettier": "2.8.8",
+    "tailwindcss": "3.3.2"
   }
 }
