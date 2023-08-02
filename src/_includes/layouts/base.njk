@@ -47,8 +47,8 @@
       }
     </script>
   </head>
-  <body class="h-screen flex flex-col gap-5 p-4 md:p-5 bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
-    <header class="flex gap-3 items-center">
+  <body class="h-screen flex flex-col items-center bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
+    <header class="max-w-screen-lg w-full p-4 md:p-5 flex gap-3 items-center">
       <a href="/">
         <svg class="w-10" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
@@ -89,11 +89,11 @@
         {% endif %}
       </div>
     </header>
-    <main class="flex-1">
+    <main class="max-w-screen-lg w-full px-4 md:px-5  flex-1">
       {{ content | safe }}
     </main>
-    <footer class="pt-1 pb-3 text-xs">
-      <hr class="mb-3"/>
+    <hr class="mt-4 md:mt-5"/>
+    <footer class="max-w-screen-lg w-full p-4 md:p-5 text-xs">
       <div class="flex justify-between flex-col sm:flex-row">
         <div class="order-1 md:order-none">
           <p>
