@@ -47,7 +47,7 @@
       }
     </script>
   </head>
-  <body class="h-screen flex flex-col gap-5 p-5 sm:p-10 bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
+  <body class="h-screen flex flex-col gap-5 p-4 md:p-5 bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
     <header class="flex gap-3 items-center">
       <a href="/">
         <svg class="w-10" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
@@ -92,19 +92,26 @@
     <main class="flex-1">
       {{ content | safe }}
     </main>
-    <footer class="pt-1 pb-3">
+    <footer class="pt-1 pb-3 text-xs">
       <hr class="mb-3"/>
-      <p class="text-xs">
-        {% if 'kk' in lang %}
-          <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
-          <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
-        {% endif %}
-        {% if 'en' in lang %}
-          Born and raised in
-          <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
-          <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
-        {% endif %}
-      </p>
+      <div class="flex justify-between flex-col sm:flex-row">
+        <div class="order-1 md:order-none">
+          <p>
+            {% if 'kk' in lang %}
+              <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
+              <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
+            {% endif %}
+            {% if 'en' in lang %}
+              Born and raised in
+              <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
+              <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
+            {% endif %}
+          </p>
+        </div>
+        <div class="md:text-right">
+          {% include 'contacts_links.njk' %}
+        </div>
+      </div>
     </footer>
     <script type="application/ld+json">
       { "@context": "http://www.schema.org", "@type": "person", "name": "Zharzhan Kulmyrza", "jobTitle": "Frontend Web
