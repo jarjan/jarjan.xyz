@@ -17,8 +17,8 @@
     <link rel="me" href="https://mstdn.social/@jarjan"/>
   </head>
   <body class="h-screen flex flex-col items-center bg-slate-50 text-slate-900">
-    <header class="max-w-screen-lg w-full p-4 md:p-5 flex gap-3 items-center">
-      <a href="/">
+    <header class="header p-4 md:p-5 flex gap-3 items-center">
+      <a href="/" title="jarjan.xyz">
         <svg class="w-10" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <path fill="#5990dc" d="M0 0h295v295H0z"/>
@@ -32,8 +32,7 @@
               d="M165 89.576c0-3.456 1.224-6.408 3.672-8.856 2.448-2.448 5.4-3.672 8.856-3.672 3.456 0 6.408 1.224 8.856 3.672 2.448
                 2.448 3.672 5.4 3.672 8.856 0 3.456-1.224 6.408-3.672 8.856-2.448 2.448-5.4 3.672-8.856 3.672-3.456
                 0-6.408-1.224-8.856-3.672-2.448-2.448-3.672-5.4-3.672-8.856z"
-              fill="#C40F25"
-              onclick="toggleTheme();return false;"/>
+              fill="#C40F25"/>
             <path
               d="M156.072 148.872c0 4.704-.408 9.264-1.224 13.68-.816 4.416-2.376 8.328-4.68 11.736-2.304 3.408-5.592 6.144-9.864
                 8.208-4.272 2.064-9.864 3.096-16.776 3.096-8.064 0-14.88-1.92-20.448-5.76s-9.168-9.84-10.8-18l20.592-5.04c.288 2.496
@@ -42,6 +41,13 @@
               fill="#FFF"/>
           </g>
         </svg>
+        <span class="sr-only">
+          {% if 'kk' in lang %}
+            Жаржан<br>Құлмырза
+          {% else %}
+            Zharzhan<br>Kulmyrza
+          {% endif %}
+        </span>
       </a>
       <div class="flex-grow">
         <p class="text-md font-extrabold leading-4">
@@ -58,11 +64,11 @@
         {% endif %}
       </div>
     </header>
-    <main class="max-w-screen-lg w-full px-4 md:px-5  flex-1">
+    <main class="content px-4 md:px-5  flex-1">
       {{ content | safe }}
     </main>
     <hr class="w-full mt-4 md:mt-5"/>
-    <footer class="max-w-screen-lg w-full p-4 md:p-5 text-xs">
+    <footer class="footer p-4 md:p-5 text-xs">
       <div class="flex justify-between flex-col sm:flex-row">
         <div class="order-1 md:order-none">
           <p>
