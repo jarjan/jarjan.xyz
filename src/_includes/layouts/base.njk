@@ -15,39 +15,8 @@
       type="application/atom+xml"
       title="Multi-language blog of Zharzhan Kulmyrza on various topics."/>
     <link rel="me" href="https://mstdn.social/@jarjan"/>
-    <script>
-      // Applying dark mode
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document
-          .documentElement
-          .classList
-          .add("dark");
-      } else {
-        document
-          .documentElement
-          .classList
-          .remove("dark");
-      }
-      function toggleTheme() {
-        if (document
-            .documentElement
-            .classList
-            .contains("dark")) {
-          localStorage.theme = "light";
-        } else {
-          localStorage.theme = "dark";
-        }
-        document
-          .documentElement
-          .classList
-          .toggle("dark");
-      }
-    </script>
   </head>
-  <body class="h-screen flex flex-col items-center bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-slate-50">
+  <body class="h-screen flex flex-col items-center bg-slate-50 text-slate-900">
     <header class="max-w-screen-lg w-full p-4 md:p-5 flex gap-3 items-center">
       <a href="/">
         <svg class="w-10" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
