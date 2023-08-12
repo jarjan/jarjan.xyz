@@ -5,27 +5,28 @@ description: Фронтенд уеб инженері
 lang: kk
 ---
 
-<div class="flex flex-col gap-5">
+<div class="index">
   <section id="about-me">
-    <h2 class="text-2xl font-bold">Мен туралы</h2>
+    <h2>Мен туралы</h2>
     Фронтенд веб инженері болып
-    <a class="link" href="https://deliveryhero.com">Delivery Hero</a>-да жұмыс істеймін. <br/> Мені ғаламторда
+    <a href="https://deliveryhero.com">Delivery Hero</a>-да жұмыс істеймін. <br/> Мені ғаламторда
     <i>zharzhan</i>
     немесе
     <i>jarjan</i>
-    деген есімдермен табуға болады. <br/> Өзгеше реті жоқ, мені қызықтыратын тақырыптар: web dev, performance, html, css, js
+    деген есімдермен табуға болады. <br/> Мені қызықтыратын тақырыптар(өзгеше реті жоқ): web dev, performance, html, css,
+    js.
   </section>
   <section id="projects">
-    <h2 class="text-2xl font-bold">Жобалар</h2>
-    <a class="link" href="https://tenge.work">tenge.work</a>
+    <h2>Жобалар</h2>
+    <a href="https://tenge.work">tenge.work</a>
     – Қазақстан айлық салығы есептеуіші <br/>
-    <a class="link" href="https://pixel.jarjan.xyz">pixel.jarjan.xyz</a>
+    <a href="https://pixel.jarjan.xyz">pixel.jarjan.xyz</a>
     – Google Pixel ұялы телефондарына түсірілген суреттер жинағы #teampixel <br/>
-    <a class="link" href="https://wordle.jarjan.xyz">wordle.jarjan.xyz</a>
+    <a href="https://wordle.jarjan.xyz">wordle.jarjan.xyz</a>
     – Wordle ойының қазақ тіліндегі клоны <br/>
   </section>
   <section id="posts">
-    <h2 class="text-2xl font-bold">
+    <h2>
       Блог жазбалары
       <a href="/feed.xml" title="RSS арна">
         <svg class="w-4 h-4 inline" viewBox="0 0 24 24" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
@@ -33,13 +34,9 @@ lang: kk
           3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909
           24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/>
         </svg>
-        <span class="sr-only">RSS арна</span>
+        <span class="sr-only">(RSS арна)</span>
       </a>
     </h2>
-    {%- for post in collections.posts | reverse -%}
-      <a class="text-xl link" href="{{ post.url }}">{{ post.data.title }}</a>
-      <span class="text-xs text-slate-500">{{ post.data.lang }} | {{ post.date.toLocaleDateString("kk-KZ") }}</span>
-      <br/>
-    {%- endfor -%}
+    {% include 'blog_links.njk' %}
   </section>
 </div>

@@ -6,28 +6,29 @@ lang: en
 permalink: "index.html"
 ---
 
-<div class="flex flex-col gap-5">
+<div class="index">
   <section id="about-me">
-    <h2 class="text-2xl font-bold">About me</h2>
+    <h2>About me</h2>
     I am a Frontend Web Engineer currently working at
-    <a class="link" href="https://deliveryhero.com">Delivery Hero</a>. <br/> You can find me on internet as
+    <a href="https://deliveryhero.com">Delivery Hero</a>. <br/> You can find me on internet as
     <i>zharzhan</i>
     or
     <i>jarjan</i>. Oh, and my name is spelled as
-    <span class="text-sm font-mono">/ʒarʒan/</span>. <br/> Here are few subjects I am interested in, in no particular order:
-            web dev, performance, html, css, js
+    <small>
+      <code>/ʒarʒan/</code>
+    </small>. <br/> Here are few subjects I am interested in, in no particular order: web dev, performance, html, css, js.
   </section>
   <section id="projects">
-    <h2 class="text-2xl font-bold">Projects</h2>
-    <a class="link" href="https://tenge.work">tenge.work</a>
+    <h2>Projects</h2>
+    <a href="https://tenge.work">tenge.work</a>
     – salary tax calculator for Kazakhstan <br/>
-    <a class="link" href="https://pixel.jarjan.xyz">pixel.jarjan.xyz</a>
+    <a href="https://pixel.jarjan.xyz">pixel.jarjan.xyz</a>
     – photos taken on Google Pixel phones #teampixel <br/>
-    <a class="link" href="https://wordle.jarjan.xyz">wordle.jarjan.xyz</a>
+    <a href="https://wordle.jarjan.xyz">wordle.jarjan.xyz</a>
     – clone of Wordle game in Kazakh language <br/>
   </section>
   <section id="posts">
-    <h2 class="text-2xl font-bold">
+    <h2>
       Blog posts
       <a href="/feed.xml" title="RSS feed">
         <svg class="w-4 h-4 inline" viewBox="0 0 24 24" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
@@ -38,10 +39,6 @@ permalink: "index.html"
         <span class="sr-only">RSS feed</span>
       </a>
     </h2>
-    {%- for post in collections.posts | reverse -%}
-      <a class="text-xl link" href="{{ post.url }}">{{ post.data.title }}</a>
-      <span class="text-xs text-slate-500">{{ post.data.lang }} | {{ post.date.toLocaleDateString("kk-KZ") }}</span>
-      <br/>
-    {%- endfor -%}
+    {% include 'blog_links.njk' %}
   </section>
 </div>

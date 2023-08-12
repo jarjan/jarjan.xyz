@@ -16,10 +16,10 @@
       title="Multi-language blog of Zharzhan Kulmyrza on various topics."/>
     <link rel="me" href="https://mstdn.social/@jarjan"/>
   </head>
-  <body class="h-screen flex flex-col items-center bg-slate-50 text-slate-900">
-    <header class="header p-4 md:p-5 flex gap-3 items-center">
-      <a href="/" title="jarjan.xyz">
-        <svg class="w-10" viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
+  <body>
+    <header class="header">
+      <a href="/" title="jarjan.xyz" class="header__logo">
+        <svg viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <path fill="#5990dc" d="M0 0h295v295H0z"/>
             <path
@@ -49,42 +49,34 @@
           {% endif %}
         </span>
       </a>
-      <div class="flex-grow">
-        <p class="text-md font-extrabold leading-4">
-          {% if 'kk' in lang %}
-            Жаржан<br>Құлмырза
-          {% else %}
-            Zharzhan<br>Kulmyrza
-          {% endif %}
-        </p>
-      </div>
-      <div class="text-right text-xs">
-        {% if page.url === "/" %}
-          <a class="link" href="/kk">қазақша</a>
+      <p class="header__name">
+        {% if 'kk' in lang %}
+          Жаржан<br>Құлмырза
+        {% else %}
+          Zharzhan<br>Kulmyrza
         {% endif %}
-      </div>
+      </p>
+      {% if page.url === "/" %}
+        <a href="/kk" class="header__lang">қазақша</a>
+      {% endif %}
     </header>
-    <main class="content px-4 md:px-5  flex-1">
+    <main class="content flex-1">
       {{ content | safe }}
     </main>
-    <hr class="w-full mt-4 md:mt-5"/>
-    <footer class="footer p-4 md:p-5 text-xs">
-      <div class="flex justify-between flex-col sm:flex-row">
-        <div class="order-1 md:order-none">
-          <p>
-            {% if 'kk' in lang %}
-              <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
-              <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
-            {% else %}
-              Born and raised in
-              <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
-              <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
-            {% endif %}
-          </p>
-        </div>
-        <div class="md:text-right">
-          {% include 'contacts_links.njk' %}
-        </div>
+    <hr/>
+    <footer class="footer">
+      <div class="footer__copy">
+        {% if 'kk' in lang %}
+          <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
+          <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып, өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
+        {% else %}
+          Born and raised in
+          <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
+          <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
+        {% endif %}
+      </div>
+      <div class="footer_links">
+        {% include 'contacts_links.njk' %}
       </div>
     </footer>
     <script type="application/ld+json">

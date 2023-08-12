@@ -20,7 +20,6 @@ module.exports = class {
   async render({ rawCss, rawFilepath }) {
     return await postcss([
       require("postcss-import"),
-      require("tailwindcss")("./tailwind.config.js"),
       require("autoprefixer"),
       require("@fullhuman/postcss-purgecss")({
         content: ["./src/**/*.html", "./src/**/*.njk", "./src/**/*.md"],

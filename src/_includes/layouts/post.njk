@@ -5,9 +5,9 @@ layout: layouts/base.njk
 <section class="post">
   <header>
     <h1 class="post__title">{{ title }}</h1>
-    <p class="post__date">
+    <small>
       {{ page.date.toLocaleDateString("kk-KZ") }}
-    </p>
+    </small>
   </header>
   {{ content | safe }}
 </section>
