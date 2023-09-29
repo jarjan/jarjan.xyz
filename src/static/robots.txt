@@ -2,6 +2,24 @@
 
 User-agent: *
 
-# Block ChatGPT
+# Block ChatGPT and other AI scrappers
 User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-Agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
 Disallow: /
