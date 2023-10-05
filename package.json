@@ -22,8 +22,8 @@
   "devDependencies": {
     "@11ty/eleventy": "2.0.1",
     "@11ty/eleventy-plugin-rss": "1.2.0",
-    "@11tyrocks/eleventy-plugin-lightningcss": "1.1.2",
+    "@11tyrocks/eleventy-plugin-lightningcss": "1.2.0",
     "node-fetch": "3.3.2",
-    "prettier": "3.0.2"
+    "prettier": "3.0.3"
   }
 }
