@@ -40,6 +40,10 @@ body {
   margin: 0;
   line-height: inherit;
   height: 100vh;
+
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: lining-nums;
 }
 
 hr {
@@ -79,8 +83,8 @@ h2 {
 }
 
 p {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
   margin: 0;
 }
 
@@ -158,6 +162,10 @@ small {
   order: 1;
 }
 
+.footer__links {
+  flex: 1;
+}
+
 @media (min-width: 640px) {
   .footer {
     flex-direction: row;
@@ -168,7 +176,7 @@ small {
     order: initial;
   }
 
-  .footer_links {
+  .footer__links {
     text-align: right;
   }
 }
