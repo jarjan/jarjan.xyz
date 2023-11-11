@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 tags: posts
+date: 2022-07-05
 title: Yet another first post
 description: (Re)Starting a new blog
 lang: en

@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 tags: posts
+date: 2022-08-05
 title: Can I CSS?
 description: Reflection on CSS usage in recent years
 lang: en
