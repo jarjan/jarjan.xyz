@@ -56,18 +56,26 @@
           Zharzhan<br>Kulmyrza
         {% endif %}
       </p>
-      {% if 'kk' in lang %}
-        <a href="/kk" class="header__link{{ ' active' if page.url == '/kk' }}">Блог</a>
-        <a href="/kk/projects" class="header__link{{ ' active' if page.url == '/kk/projects/' }}">Жобалар</a>
-      {% else %}
-        <a href="/" class="header__link{{ ' active' if page.url == '/' }}">Blog</a>
-        <a href="/projects" class="header__link{{ ' active' if page.url == '/projects/' }}">Projects</a>
-      {% endif %}
-      {% if page.url === "/" %}
+      <div class="header__links">
+        {% if 'kk' in lang %}
+          <a href="/kk" class="{{ ' active' if page.url == '/kk' }}">Блог</a>
+          <a href="/kk/projects" class="{{ ' active' if page.url == '/kk/projects/' }}">Жобалар</a>
+        {% else %}
+          <a href="/" class="{{ ' active' if page.url == '/' }}">Blog</a>
+          <a href="/projects" class="{{ ' active' if page.url == '/projects/' }}">Projects</a>
+        {% endif %}
+      </div>
+      {% if page.url == "/" %}
         <a href="/kk" class="header__lang">Қазақша</a>
+      {% endif %}
+      {% if  page.url == "/projects/" %}
+        <a href="/kk/projects" class="header__lang">Қазақша</a>
       {% endif %}
       {% if page.url === "/kk/" %}
         <a href="/" class="header__lang">English</a>
+      {% endif %}
+      {% if page.url == "/kk/projects/" %}
+        <a href="/projects" class="header__lang">English</a>
       {% endif %}
     </header>
     <main class="content flex-1">
