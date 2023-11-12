@@ -1,6 +1,6 @@
 ---
 layout: layouts/blogpost.njk
-tags: posts
+tags: blog
 date: 2022-07-05
 title: Yet another first post
 description: (Re)Starting a new blog

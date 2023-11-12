@@ -153,6 +153,10 @@ small {
 .index__subscribe {
   padding-left: 0.25rem;
 }
+.index__subscribe svg {
+  width: 0.5rem;
+  height: 0.5rem;
+}
 
 .index #posts > a {
   display: block;

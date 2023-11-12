@@ -1,6 +1,6 @@
 ---
 layout: layouts/blogpost.njk
-tags: posts
+tags: blog
 date: 2022-08-05
 title: Can I CSS?
 description: Reflection on CSS usage in recent years

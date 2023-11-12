@@ -1,6 +1,6 @@
 ---
 layout: layouts/blogpost.njk
-tags: posts
+tags: blog
 date: 2023-10-04
 title: 5 years at Delivery Hero
 description: My story of working at Delivery Hero

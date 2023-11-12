@@ -19,7 +19,7 @@
   <body>
     <header class="header">
       <a href="/" title="jarjan.xyz" class="header__logo">
-        <svg viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
+        <svg viewbox="0 0 295 295" width="40px" heigh="40px" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <path fill="#5990dc" d="M0 0h295v295H0z"/>
             <path
@@ -57,11 +57,12 @@
         {% endif %}
       </p>
       <div class="header__links">
+        {% set blogRegExp = r/^\/blog\/.*/gm %}
         {% if 'kk' in lang %}
-          <a href="/kk" class="{{ ' active' if page.url == '/kk' }}">Блог</a>
+          <a href="/kk" class="{{ ' active' if page.url == '/kk' or blogRegExp.test(page.url) }}">Блог</a>
           <a href="/kk/projects" class="{{ ' active' if page.url == '/kk/projects/' }}">Жобалар</a>
         {% else %}
-          <a href="/" class="{{ ' active' if page.url == '/' }}">Blog</a>
+          <a href="/" class="{{ ' active' if page.url == '/' or blogRegExp.test(page.url) }}">Blog</a>
           <a href="/projects" class="{{ ' active' if page.url == '/projects/' }}">Projects</a>
         {% endif %}
       </div>

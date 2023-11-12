@@ -1,6 +1,6 @@
 ---
 layout: layouts/blogpost.njk
-tags: posts
+tags: blog
 date: 2019-06-13
 title: Как я устроился в Delivery Hero
 description: Архив из jjermany.blog
