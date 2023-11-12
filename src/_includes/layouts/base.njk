@@ -56,8 +56,18 @@
           Zharzhan<br>Kulmyrza
         {% endif %}
       </p>
+      {% if 'kk' in lang %}
+        <a href="/kk" class="header__link{{ ' active' if page.url == '/kk' }}">Блог</a>
+        <a href="/kk/projects" class="header__link{{ ' active' if page.url == '/kk/projects/' }}">Жобалар</a>
+      {% else %}
+        <a href="/" class="header__link{{ ' active' if page.url == '/' }}">Blog</a>
+        <a href="/projects" class="header__link{{ ' active' if page.url == '/projects/' }}">Projects</a>
+      {% endif %}
       {% if page.url === "/" %}
-        <a href="/kk" class="header__lang">қазақша</a>
+        <a href="/kk" class="header__lang">Қазақша</a>
+      {% endif %}
+      {% if page.url === "/kk/" %}
+        <a href="/" class="header__lang">English</a>
       {% endif %}
     </header>
     <main class="content flex-1">
@@ -82,8 +92,8 @@
     <script type="application/ld+json">
       { "@context": "http://www.schema.org", "@type": "person", "name": "Zharzhan Kulmyrza", "jobTitle": "Frontend Web
       Engineer", "url": "https://jarjan.xyz", "email": "hey@jarjan.xyz", "sameAs": ["https://github.com/jarjan",
-      "https://twitter.com/jarjan", "https://t.me/zharzhan", "https://linkedin.com/in/zharzhan", "https://keybase.io/jarjan"]
-      }
+      "https://mstdn.social/@jarjan", "https://t.me/zharzhan", "https://linkedin.com/in/zharzhan",
+      "https://keybase.io/jarjan"] }
     </script>
   </body>
 </html>

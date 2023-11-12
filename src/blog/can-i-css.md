@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/blogpost.njk
 tags: posts
 date: 2022-08-05
 title: Can I CSS?

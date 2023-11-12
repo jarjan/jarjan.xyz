@@ -1,8 +1,11 @@
-/post/2019-06-13-jjermany /post/jjermany
-/post/2019-06-13-jjermany/ /post/jjermany
-/post/2022-07-05-yet-another-first-post /post/yet-another-first-post
-/post/2022-07-05-yet-another-first-post/ /post/yet-another-first-post
-/post/2022-08-05-can-i-css /post/can-i-css
-/post/2022-08-05-can-i-css/ /post/can-i-css
-/post/2023-10-04-5-years-at-deliveryhero /post/5-years-at-deliveryhero
-/post/2023-10-04-5-years-at-deliveryhero/ /post/5-years-at-deliveryhero
+/post/2019-06-13-jjermany /blog/jjermany
+/post/2019-06-13-jjermany/ /blog/jjermany
+/post/2022-07-05-yet-another-first-post /blog/yet-another-first-post
+/post/2022-07-05-yet-another-first-post/ /blog/yet-another-first-post
+/post/2022-08-05-can-i-css /blog/can-i-css
+/post/2022-08-05-can-i-css/ /blog/can-i-css
+/post/2023-10-04-5-years-at-deliveryhero /blog/5-years-at-deliveryhero
+/post/2023-10-04-5-years-at-deliveryhero/ /blog/5-years-at-deliveryhero
+
+/blog /
+/blog/ /

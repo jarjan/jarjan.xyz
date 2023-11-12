@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/blogpost.njk
 tags: posts
 date: 2023-10-04
 title: 5 years at Delivery Hero

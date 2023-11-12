@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: layouts/blogpost.njk
 tags: posts
 date: 2019-06-13
 title: Как я устроился в Delivery Hero
