@@ -99,24 +99,28 @@ small {
   padding: 1rem;
 }
 
+.header + hr {
+  margin: 0;
+}
+
 .header__logo {
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 .header__name {
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
+  flex: 1;
   gap: 0.5rem;
 }
 
 .header__links {
-  flex: 1;
-  order: 1;
-
   display: flex;
+  order: 1;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .header__links a.active {
@@ -213,8 +217,22 @@ small {
 }
 
 @media (min-width: 640px) {
+  .header + hr {
+    display: none;
+  }
+
+  .header__logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .header__name {
+    flex: initial;
+  }
+
   .header__links {
     order: initial;
+    flex: 1;
   }
 
   .header__links a {

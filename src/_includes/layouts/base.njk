@@ -19,7 +19,7 @@
   <body>
     <header class="header">
       <a href="/" title="jarjan.xyz" class="header__logo">
-        <svg viewbox="0 0 295 295" width="40px" heigh="40px" xmlns="http://www.w3.org/2000/svg">
+        <svg viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fill-rule="evenodd">
             <path fill="#5990dc" d="M0 0h295v295H0z"/>
             <path
@@ -43,17 +43,17 @@
         </svg>
         <span class="sr-only">
           {% if 'kk' in lang %}
-            Жаржан<br>Құлмырза
+            Жаржан Құлмырза
           {% else %}
-            Zharzhan<br>Kulmyrza
+            Zharzhan Kulmyrza
           {% endif %}
         </span>
       </a>
       <p class="header__name">
         {% if 'kk' in lang %}
-          Жаржан<br>Құлмырза
+          Жаржан Құлмырза
         {% else %}
-          Zharzhan<br>Kulmyrza
+          Zharzhan Kulmyrza
         {% endif %}
       </p>
       <div class="header__links">
@@ -79,6 +79,7 @@
         <a href="/projects" class="header__lang">English</a>
       {% endif %}
     </header>
+    <hr/>
     <main class="content flex-1">
       {{ content | safe }}
     </main>
