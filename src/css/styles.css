@@ -144,25 +144,25 @@ small {
   padding: 1rem;
 }
 
-.index {
+.page {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.index h2 {
+.page h2 {
   margin-bottom: 0.25rem;
 }
 
-.index__subscribe {
+.subscribe {
   padding-left: 0.25rem;
 }
-.index__subscribe svg {
+.subscribe svg {
   width: 0.5rem;
   height: 0.5rem;
 }
 
-.index #posts > a {
+.page #posts > a {
   display: block;
   line-height: 1;
   margin-top: 0.5rem;
@@ -252,7 +252,7 @@ small {
     text-align: right;
   }
 
-  .index #posts > a {
+  .page #posts > a {
     display: inline;
     line-height: initial;
     margin-top: 0;

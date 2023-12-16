@@ -5,22 +5,12 @@ description: Frontend Web Engineer
 lang: en
 ---
 
-<div class="index">
-  <section id="about-me">
-    <h2>About me</h2>
-    I am a Frontend Web Engineer currently working at
-    <a href="https://deliveryhero.com">Delivery Hero</a>. <br/> You can find me on internet as
-    <i>zharzhan</i>
-    or
-    <i>jarjan</i>. Oh, and my name is spelled as
-    <small>
-      <code>/ʒarʒan/</code>
-    </small>. <br/> Here are few subjects I am interested in, in no particular order: web dev, performance, html, css, js.
-  </section>
+<div class="page">
+  {% include 'about_me.njk' %}
   <section id="posts">
     <h2>
       Blog posts
-      <small class="index__subscribe">
+      <small class="subscribe">
         <a href="/feed.xml">
           Subscribe
           <svg class="w-4 h-4 inline" viewBox="0 0 24 24" width="14px" height="14px" xmlns="http://www.w3.org/2000/svg">
