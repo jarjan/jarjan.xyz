@@ -1,3 +1,3 @@
 const today = new Date();
 
-module.exports = today.getFullYear();
+export default today.getFullYear();

@@ -1,8 +1,8 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginLightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
-const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginLightningCSS from "@11tyrocks/eleventy-plugin-lightningcss";
+import pluginSitemap from "@quasibit/eleventy-plugin-sitemap";
 
-module.exports = (eleventyConfig) => {
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "./" });
 
   eleventyConfig.addPlugin(pluginRss);
@@ -18,4 +18,4 @@ module.exports = (eleventyConfig) => {
       input: "./src",
     },
   };
-};
+}
