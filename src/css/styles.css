@@ -87,6 +87,23 @@ small {
   color: #64738b;
 }
 
+blockquote {
+  position: relative;
+  padding: 0.25em 0.5em;
+  margin: 0;
+  background-color: rgba(89, 144, 220, 0.05);
+}
+
+blockquote::before {
+  content: "";
+  background-color: #5990dc;
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -192,7 +209,8 @@ small {
   flex: 1;
 }
 
-.post p {
+.post > p,
+.post > blockquote {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
