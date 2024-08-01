@@ -6,7 +6,7 @@ layout: layouts/base.njk
   <header>
     <h1 class="post__title">{{ title }}</h1>
     <small>
-      {{ page.date.toLocaleDateString("kk-KZ") }}
+      {{ page.date.toLocaleDateString("kk-KZ") }} | {{ content | timeToRead (lang) }}
     </small>
   </header>
   {{ content | safe }}

@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #5990dc;
+  --primary-background-color: rgba(89, 144, 220, 0.05);
+}
+
 *,
 ::before,
 ::after {
@@ -91,17 +96,32 @@ blockquote {
   position: relative;
   padding: 0.25em 0.5em;
   margin: 0;
-  background-color: rgba(89, 144, 220, 0.05);
+  background-color: var(--primary-background-color);
 }
 
 blockquote::before {
   content: "";
-  background-color: #5990dc;
+  background-color: var(--primary-color);
   height: 100%;
   width: 3px;
   position: absolute;
   left: 0;
   top: 0;
+}
+
+details {
+  background-color: var(--primary-background-color);
+  border: 3px solid var(--primary-color);
+  padding: 0.25em 0.5em;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  color: var(--primary-color);
+}
+
+details > img {
+  width: 100%;
 }
 
 .header {
@@ -209,8 +229,9 @@ blockquote::before {
   flex: 1;
 }
 
-.post > p,
-.post > blockquote {
+.post > blockquote,
+.post > details,
+.post > p {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
