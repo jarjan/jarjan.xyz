@@ -121,22 +121,28 @@ lang: kk
 
 Германияда бала туылған кезде берілетін бірнеше жәрдемақы түрлері бар. Бірақ оларды алу үшін сол баяғы бюрократиямен шайқасу керек.
 
-### Kindergeld
-
-... кейін толтырылады ...
-
-### Elterngeld
-
-... кейін толтырылады ...
+Туу туралы куәлік алған кезде, сізге қолыңызға қосымша жәрдемақыларға арналған көшірмелерін де береді. Соларды төмендегі жәрдемақыларға тапсырып жатқанда қолданасыз.
 
 ### Mutterschaftgeld
 
-... кейін толтырылады ...
+Егер сіз(анасы) дәл декретке шығар алдында Германияда кем дегенде 3 ай жұмыс істеген болсаңыз, онда сіздің денсаулық сақтандыру компаниясы(TK, Barmer, AOK, т.б.) жәрдемақы береді. Толығырақ ақпаратты өз сақтандыру компаниясы сайтынан біле аласыз.
+
+### Kindergeld
+
+Германияда ресми түрде тұратын әрбір балаға үкімет ай сайын 250 еуро жәрдемақы береді(2023 жылдан бастап). Бұған, балаңыздың туу туралы куәлігін алғаннан кейін поштамен Finanzamt-тан(салық комитеті) келетін Steuer-ID(салық идентификаторы) келеді, сол хатты жоғалтып алмаңыз. [Басқа ақпаратты мына жерден біле аласыз][de-kindergeld].
+
+### Elterngeld
+
+Ал бұл жәрдемақы болса, екі ата-анаға да беріледі. [Анкетасын мына жерден онлайн толтырған жөн][de-elterngeld], себебі сұрайтын сұрақтары өте көп.
 
 ## Пайдалы сілтемелер және ақпараттар
 
 - Германиядағы қазақша-немісше ресми аудармашы PhD Dr. Гүлсім Масақова: [+4917624292831](https://wa.me/4917624292831).
 - Берлиндегі елшілікпен байланыс парақшасы: [https://www.gov.kz/memleket/entities/mfa-berlin/contacts?lang=kk](https://www.gov.kz/memleket/entities/mfa-berlin/contacts?lang=kk)
+
+
+> Сұрақ, ұсыныстарыңыз болса, немес қате тапсаңыз, [менің телеграмыма хабарласыңыз](https://t.me/zharzhan).
+> Рахмет!
 
 [iso9]: https://en.wikipedia.org/wiki/ISO_9
 [kz-botschaft-geburtskunde]: https://www.gov.kz/memleket/entities/mfa-berlin/press/article/details/145552?directionId=_5455&lang=kk
@@ -147,3 +153,5 @@ lang: kk
 [berlin-apostille]: https://service.berlin.de/dienstleistung/320315/
 [berlin-meldebescheinigung]: https://service.berlin.de/dienstleistung/120702/
 [berlin-permit]: https://service.berlin.de/dienstleistung/324269/en/
+[de-kindergeld]: https://web.arbeitsagentur.de/opal/kgo-antraggeburt-ui/auswahl
+[de-elterngeld]: https://www.elterngeld-digital.de/
