@@ -1,6 +1,20 @@
 :root {
   --primary-color: #5990dc;
+  --primary-color-active: #003878;
   --primary-background-color: rgba(89, 144, 220, 0.05);
+  --body-background-color: #f9fbfc;
+  --body-color: #0f172a;
+  --text-grey-color: #64738b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #5990dc;
+    --primary-color-active: #9ac4ff;
+    --primary-background-color: rgba(89, 144, 220, 0.25);
+    --body-background-color: #1c1c1c;
+    --body-color: #eeeeee;
+  }
 }
 
 *,
@@ -33,8 +47,8 @@ html {
   -moz-tab-size: 4;
   tab-size: 4;
 
-  background-color: #f9fbfc;
-  color: #0f172a;
+  background-color: var(--body-background-color);
+  color: var(--body-color);
 }
 
 body {
@@ -60,11 +74,11 @@ hr {
 
 a {
   text-decoration: underline;
-  color: #4990e2;
+  color: var(--primary-color);
 }
 
 a:hover {
-  color: #003878;
+  color: var(--primary-color-active);
   text-decoration-thickness: 0.075rem;
 }
 
@@ -89,7 +103,7 @@ p {
 
 small {
   font-size: 0.8rem;
-  color: #64738b;
+  color: var(--text-grey-color);
 }
 
 blockquote {
@@ -161,8 +175,9 @@ details > img {
 }
 
 .header__links a.active {
-  color: #003878;
+  color: var(--primary-color-active);
   text-decoration-thickness: 0.075rem;
+  font-weight: 600;
 }
 
 .header__lang {
