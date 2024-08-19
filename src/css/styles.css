@@ -5,6 +5,7 @@
   --body-background-color: #f9fbfc;
   --body-color: #0f172a;
   --text-grey-color: #64738b;
+  --hr-color: #cce0ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@
     --primary-background-color: rgba(89, 144, 220, 0.25);
     --body-background-color: #1c1c1c;
     --body-color: #eeeeee;
+    --hr-color: #424242;
   }
 }
 
@@ -69,7 +71,7 @@ hr {
   height: 0;
   width: 100%;
   border: 0;
-  border-top: 1px solid #cce0ff;
+  border-top: 1px solid var(--hr-color);
 }
 
 a {
