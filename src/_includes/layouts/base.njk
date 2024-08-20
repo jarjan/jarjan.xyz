@@ -6,9 +6,13 @@
     <meta name="generator" content="{{ eleventy.generator }}"/>
     <title>{{ title }} | {{ 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' }}</title>
     <meta name="description" content="{{ description }}"/>
+    <meta property="og:title" content="{{ title }} | {{ 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' }}"/>
+    <meta property="og:description" content="{{ description }}"/>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jarjan.xyz{{ page.url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <style type="text/css">{{ googleFontsStylesheet | safe }}</style>
+    <style type="text/css">{{googleFontsStylesheet | safe}}</style>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     <link rel="me" href="https://mastodon.social/@jarjan"/>
@@ -104,6 +108,6 @@
       "https://keybase.io/jarjan", "https://threads.net/@jarjanxyz"] }
     </script>
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
   </body>
 </html>
