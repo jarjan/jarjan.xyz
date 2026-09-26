@@ -11,7 +11,7 @@ Today marks my 5 year anniversary at Delivery Hero. It is halfway through my 10 
 
 ## How I got there
 
-I wrote about this in [my older post](https://jarjan.xyz/post/jjermany/). But let me summarise it in English, as that post is in Russian.
+I wrote about this in [my older post](/blog/jjermany/). But let me summarise it in English, as that post is in Russian.
 
 It all started in the spring of 2018, when I decided to move to Europe. I was a frontend developer and applied to several companies, but I didn't have any luck. I applied directly through company websites, got a lot of rejections, and didn't hear back from most of the companies. Fortunately, one of the recruitment agencies contacted me and told me about the web frontend software engineer position at Delivery Hero. I was interested, and agreed to apply. I had 3 interviews(the last one with the CTO), and got an offer after 3 weeks. I accepted and began my journey.
 

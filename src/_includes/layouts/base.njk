@@ -4,15 +4,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="generator" content="{{ eleventy.generator }}"/>
-    <title>{{ title }} | {{ 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' }}</title>
+    {% set authorName = 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' %}
+    {% set pageTitle = title if title == authorName else title + ' | ' + authorName %}
+    <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ description }}"/>
-    <meta property="og:title" content="{{ title }} | {{ 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' }}"/>
+    <meta property="og:title" content="{{ pageTitle }}"/>
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jarjan.xyz{{ page.url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <style type="text/css">{{googleFontsStylesheet | safe}}</style>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     <link rel="me" href="https://mastodon.social/@jarjan"/>
@@ -104,10 +103,23 @@
       </div>
     </footer>
     <script type="application/ld+json">
-      { "@context": "http://www.schema.org", "@type": "person", "name": "Zharzhan Kulmyrza", "jobTitle": "Frontend Web
-      Engineer", "url": "https://jarjan.xyz", "email": "hey@jarjan.xyz", "sameAs": ["https://github.com/jarjan",
-      "https://mastodon.social/@jarjan", "https://bsky.app/profile/jarjan.xyz", "https://t.me/zharzhan",
-      "https://linkedin.com/in/zharzhan", "https://threads.net/@jarjanxyz"] }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zharzhan Kulmyrza",
+        "jobTitle": "Staff Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "Delivery Hero" },
+        "url": "https://jarjan.xyz",
+        "email": "hey@jarjan.xyz",
+        "sameAs": [
+          "https://github.com/jarjan",
+          "https://mastodon.social/@jarjan",
+          "https://bsky.app/profile/jarjan.xyz",
+          "https://t.me/zharzhan",
+          "https://linkedin.com/in/zharzhan",
+          "https://threads.net/@jarjanxyz"
+        ]
+      }
     </script>
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
