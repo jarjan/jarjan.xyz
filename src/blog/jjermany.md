@@ -3,7 +3,7 @@ layout: layouts/blogpost.njk
 tags: blog
 date: 2019-06-13
 title: Как я устроился в Delivery Hero
-description: Архив из jjermany.blog
+description: "Как я искал работу в Европе, прошёл собеседования в Delivery Hero, получил визу и переехал в Берлин. Архив блога jjermany.blog."
 lang: ru
 ---
 
