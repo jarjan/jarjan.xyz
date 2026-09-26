@@ -63,7 +63,7 @@ body {
 
   margin: 0;
   line-height: inherit;
-  height: 100vh;
+  min-height: 100vh;
 
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -141,6 +141,7 @@ details summary::marker {
 
 details > img {
   width: 100%;
+  height: auto;
 }
 
 .header {
@@ -169,7 +170,6 @@ details > img {
   font-weight: 800;
   line-height: 1;
   flex: 1;
-  gap: 0.5rem;
 }
 
 .header__links {

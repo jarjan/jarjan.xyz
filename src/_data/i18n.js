@@ -1,0 +1,26 @@
+export default {
+  en: {
+    name: "Zharzhan Kulmyrza",
+    locale: "en_US",
+    blog: "Blog",
+    blogUrl: "/",
+    projects: "Projects",
+    projectsUrl: "/projects/",
+    translationLabel: "Қазақша",
+    blogPosts: "Blog posts",
+    subscribe: "Subscribe",
+    petProjects: "Pet projects",
+  },
+  kk: {
+    name: "Жаржан Құлмырза",
+    locale: "kk_KZ",
+    blog: "Блог",
+    blogUrl: "/kk/",
+    projects: "Жобалар",
+    projectsUrl: "/kk/projects/",
+    translationLabel: "English",
+    blogPosts: "Блог жазбалары",
+    subscribe: "Жазылу",
+    petProjects: "Жеке жобалар",
+  },
+};

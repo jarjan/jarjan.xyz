@@ -2,22 +2,45 @@
 <html lang="{{ lang }}">
   <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="generator" content="{{ eleventy.generator }}"/>
-    {% set authorName = 'Жаржан Құлмырза' if 'kk' in lang else 'Zharzhan Kulmyrza' %}
-    {% set pageTitle = title if title == authorName else title + ' | ' + authorName %}
+    {% set pageTitle = title if title == t.name else title + ' | ' + t.name %}
+    {% set pageUrl = 'https://jarjan.xyz' + page.url %}
     <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ description }}"/>
+    {% if page.url == '/404.html' %}
+      <meta name="robots" content="noindex"/>
+    {% else %}
+      <link rel="canonical" href="{{ pageUrl }}"/>
+    {% endif %}
+    {% if translation %}
+      {% set enUrl = page.url if lang == 'en' else translation %}
+      {% set kkUrl = page.url if lang == 'kk' else translation %}
+      <link rel="alternate" hreflang="en" href="https://jarjan.xyz{{ enUrl }}"/>
+      <link rel="alternate" hreflang="kk" href="https://jarjan.xyz{{ kkUrl }}"/>
+      <link rel="alternate" hreflang="x-default" href="https://jarjan.xyz{{ enUrl }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ t.name }}"/>
+    <meta property="og:locale" content="{{ t.locale }}"/>
     <meta property="og:title" content="{{ pageTitle }}"/>
     <meta property="og:description" content="{{ description }}"/>
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jarjan.xyz{{ page.url }}">
+    <meta property="og:type" content="{{ ogType or 'website' }}"/>
+    <meta property="og:url" content="{{ pageUrl }}"/>
+    <meta property="og:image" content="https://jarjan.xyz/og-image.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Zharzhan Kulmyrza – jarjan.xyz"/>
+    {% if ogType == 'article' %}
+      <meta property="article:published_time" content="{{ page.date | isoDate }}"/>
+      <meta property="article:author" content="Zharzhan Kulmyrza"/>
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image"/>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     <link rel="me" href="https://mastodon.social/@jarjan"/>
     <link rel="me" href="https://threads.com/@jarjanxyz"/>
     <link rel="me" href="https://bsky.app/profile/jarjan.xyz"/>
-    <link rel="me" href="https://sifa.id/p/jarjan.xyz">
+    <link rel="me" href="https://sifa.id/p/jarjan.xyz"/>
   </head>
   <body>
     <header class="header">
@@ -44,46 +67,24 @@
               fill="#FFF"/>
           </g>
         </svg>
-        <span class="sr-only">
-          {% if 'kk' in lang %}
-            Жаржан Құлмырза
-          {% else %}
-            Zharzhan Kulmyrza
-          {% endif %}
-        </span>
+        <span class="sr-only">{{ t.name }}</span>
       </a>
-      <p class="header__name">
-        {% if 'kk' in lang %}
-          Жаржан Құлмырза
-        {% else %}
-          Zharzhan Kulmyrza
-        {% endif %}
-      </p>
-      <div class="header__links">
-        {% set blogRegExp = r/^\/blog\/.*/gm %}
-        {% if 'kk' in lang %}
-          <a href="/kk" class="{{ ' active' if page.url == '/kk/' or blogRegExp.test(page.url) }}">Блог</a>
-          <a href="/kk/projects" class="{{ ' active' if page.url == '/kk/projects/' }}">Жобалар</a>
-        {% else %}
-          <a href="/" class="{{ ' active' if page.url == '/' or blogRegExp.test(page.url) }}">Blog</a>
-          <a href="/projects" class="{{ ' active' if page.url == '/projects/' }}">Projects</a>
-        {% endif %}
-      </div>
-      {% if page.url == "/" %}
-        <a href="/kk" class="header__lang">Қазақша</a>
+      {% if ownHeading %}
+        <p class="header__name">{{ t.name }}</p>
+      {% else %}
+        <h1 class="header__name">{{ t.name }}</h1>
       {% endif %}
-      {% if  page.url == "/projects/" %}
-        <a href="/kk/projects" class="header__lang">Қазақша</a>
-      {% endif %}
-      {% if page.url === "/kk/" %}
-        <a href="/" class="header__lang">English</a>
-      {% endif %}
-      {% if page.url == "/kk/projects/" %}
-        <a href="/projects" class="header__lang">English</a>
+      <nav class="header__links">
+        {% set isBlog = page.url == t.blogUrl or page.url.startsWith('/blog/') %}
+        <a href="{{ t.blogUrl }}" class="{{ 'active' if isBlog }}" {% if page.url == t.blogUrl %}aria-current="page"{% endif %}>{{ t.blog }}</a>
+        <a href="{{ t.projectsUrl }}" class="{{ 'active' if page.url == t.projectsUrl }}" {% if page.url == t.projectsUrl %}aria-current="page"{% endif %}>{{ t.projects }}</a>
+      </nav>
+      {% if translation %}
+        <a href="{{ translation }}" class="header__lang" hreflang="{{ 'en' if lang == 'kk' else 'kk' }}" lang="{{ 'en' if lang == 'kk' else 'kk' }}">{{ t.translationLabel }}</a>
       {% endif %}
     </header>
     <hr/>
-    <main class="content flex-1">
+    <main class="content">
       {{ content | safe }}
     </main>
     <hr/>
@@ -113,7 +114,6 @@
         "email": "hey@jarjan.xyz",
         "sameAs": [
           "https://github.com/jarjan",
-          "https://mastodon.social/@jarjan",
           "https://bsky.app/profile/jarjan.xyz",
           "https://t.me/zharzhan",
           "https://linkedin.com/in/zharzhan",

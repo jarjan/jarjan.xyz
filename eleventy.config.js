@@ -7,6 +7,8 @@ import htmlmin from "html-minifier-terser";
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "./" });
 
+  eleventyConfig.addFilter("isoDate", (date) => date.toISOString().slice(0, 10));
+
   // minified HTML
   eleventyConfig.addTransform("htmlmin", function (content) {
     if ((this.page.outputPath || "").endsWith(".html")) {

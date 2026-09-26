@@ -35,7 +35,7 @@ lang: kk
 
 <details>
   <summary>Туу туралы куәлік үлгісі</summary>
-  <img src='/images/geburtskunde.jpg' alt='Туу туралы куәлік үлгісінің суреті'/>
+  <img src='/images/geburtskunde.jpg' width='1042' height='1268' loading='lazy' alt='Туу туралы куәлік үлгісінің суреті'/>
 </details>
 
 Осылайша бірнеше аптадан кейін қолыңызда туу туралы куәлік болу керек. Есіңізде болсын, сізге тек бір емес, бірнеше көшірме береді, кей көшірмелері Elterngeld, Kindergeld және Mutterschaftgeld үшін арналған, оларды сол жәрдемақыларға өтініш толтырып жатқанда қосып саласыз. Олар туралы толығырақ [төменде жазылған](#geld).
@@ -68,7 +68,7 @@ lang: kk
 
 <details>
   <summary>Meldebescheinigung үлгісі</summary>
-  <img src='/images/meldebescheinigung.jpg' alt='Meldebescheinigung үлгісі'/>
+  <img src='/images/meldebescheinigung.jpg' width='710' height='1000' loading='lazy' alt='Meldebescheinigung үлгісі'/>
 </details>
 
 Егер де азаматтығы қазақ десе, онда елшілік арқылы паспорт жасатуға болады. Толық ақпарат [елшілік сайтында бар][kz-botschaft-passport].
@@ -90,7 +90,7 @@ lang: kk
 
 <details>
   <summary>Паспорт алуға арналған түбіртек үлгісі</summary>
-  <img src='/images/kz-passport-quittung.jpg' alt='Паспорт алуға арналған түбіртек үлгісі'/>
+  <img src='/images/kz-passport-quittung.jpg' width='894' height='412' loading='lazy' alt='Паспорт алуға арналған түбіртек үлгісі'/>
 </details>
 
 Қызмет мерзімі 90 күн, паспортты 3 айға дейін күтіп қалуыңыз мүмкін. Паспорт дайын болғаның [елшілік сайтында түбіртектегі нөмірімен][kz-borschaft-ready-docs] тексеру керек. Егер нөміріңіз сайтта бар болса, туу туралы куәлік және түбіртекпен бірге елшілік ашық уақытта барып дайын паспортты алып кетесіз.

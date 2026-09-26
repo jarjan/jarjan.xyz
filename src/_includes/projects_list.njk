@@ -1,0 +1,9 @@
+<section id="projects">
+  <h2>{{ t.petProjects }}</h2>
+  {% for project in projects %}
+    <p>
+      <a href="{{ project.url }}">{{ project.name }}</a>
+      – {{ project.description[lang] }}
+    </p>
+  {% endfor %}
+</section>
