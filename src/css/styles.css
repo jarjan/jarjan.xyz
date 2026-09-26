@@ -79,6 +79,7 @@ hr {
 
 a {
   text-decoration: underline;
+  text-decoration-thickness: 0.05rem;
   color: var(--primary-color);
 }
 
@@ -315,5 +316,136 @@ details > img {
     display: inline;
     line-height: initial;
     margin-top: 0;
+  }
+}
+
+/* Motion: only for people who haven't asked their system to reduce it */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: 0.2s;
+  }
+
+  .header {
+    view-transition-name: header;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a {
+    transition:
+      color 0.15s ease,
+      text-decoration-thickness 0.15s ease;
+  }
+
+  @supports (interpolate-size: allow-keywords) {
+    details {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size 0.3s ease,
+        content-visibility 0.3s allow-discrete;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+    }
+  }
+
+  .post h2 > a[name] {
+    scroll-margin-top: 1rem;
+  }
+
+  .post h2:has(> a:target) {
+    animation: target-highlight 1.5s ease-out;
+  }
+
+  .wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 1.2s ease-in-out 0.4s;
+  }
+
+  .wave:hover {
+    animation-name: wave-again;
+  }
+
+  .header__logo-dot {
+    transform-box: fill-box;
+  }
+
+  .header__logo:hover .header__logo-dot {
+    animation: dot-bounce 0.6s ease-out;
+  }
+}
+
+@keyframes target-highlight {
+  from {
+    background-color: var(--primary-background-color);
+    box-shadow: 0 0 0 0.25rem var(--primary-background-color);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  15%,
+  45% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes wave-again {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  15%,
+  45% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes dot-bounce {
+  0%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-40%);
+  }
+  65% {
+    transform: translateY(-15%);
   }
 }
