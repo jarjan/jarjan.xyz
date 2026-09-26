@@ -1,5 +1,7 @@
+@import "_fonts.css";
+
 :root {
-  --primary-color: #5990dc;
+  --primary-color: #2f6bbf;
   --primary-color-active: #003878;
   --primary-background-color: rgba(89, 144, 220, 0.05);
   --body-background-color: #f9fbfc;
@@ -10,11 +12,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #5990dc;
+    --primary-color: #7aa7e6;
     --primary-color-active: #9ac4ff;
     --primary-background-color: rgba(89, 144, 220, 0.25);
     --body-background-color: #1c1c1c;
     --body-color: #eeeeee;
+    --text-grey-color: #94a3b8;
     --hr-color: #424242;
   }
 }
@@ -179,7 +182,7 @@ details > img {
 .header__links a.active {
   color: var(--primary-color-active);
   text-decoration-thickness: 0.075rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .header__lang {
