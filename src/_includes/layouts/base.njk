@@ -35,6 +35,10 @@
       <meta property="article:author" content="Zharzhan Kulmyrza"/>
     {% endif %}
     <meta name="twitter:card" content="summary_large_image"/>
+    {% set fontFiles = ['cyrillic-ext', 'cyrillic'] if lang == 'kk' else ['latin'] %}
+    {% for file in fontFiles %}
+    <link rel="preload" href="/fonts/source-sans-3-{{ file }}.woff2" as="font" type="font/woff2" crossorigin/>
+    {% endfor %}
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     <link rel="me" href="https://mastodon.social/@jarjan"/>
@@ -45,7 +49,7 @@
   <body>
     <header class="header">
       <a href="/" title="jarjan.xyz" class="header__logo">
-        <svg viewbox="0 0 295 295" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <svg viewBox="0 0 295 295" xmlns="http://www.w3.org/2000/svg" width="40" height="40" aria-hidden="true">
           <g fill="none" fill-rule="evenodd">
             <path fill="#5990dc" d="M0 0h295v295H0z"/>
             <path
@@ -91,12 +95,12 @@
     <footer class="footer">
       <div class="footer__copy">
         {% if 'kk' in lang %}
-          <span role="img" aria-label="Қазақстан">🇰🇿</span>-да туып өстім.
-          <span role="img" aria-label="Германия">🇩🇪</span>-да код жазып өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
+          <span aria-hidden="true">🇰🇿</span> Қазақстанда туып өстім.
+          <span aria-hidden="true">🇩🇪</span> Германияда код жазып өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
         {% else %}
           Born and raised in
-          <span role="img" aria-label="Kazakhstan">🇰🇿</span>. Living and coding in
-          <span role="img" aria-label="Germany">🇩🇪</span>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
+          <span aria-hidden="true">🇰🇿</span> Kazakhstan. Living and coding in
+          <span aria-hidden="true">🇩🇪</span> Germany. <br/> © Zharzhan Kulmyrza {{ currentYear }}
         {% endif %}
       </div>
       <div class="footer__links">

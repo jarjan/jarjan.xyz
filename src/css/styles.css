@@ -6,7 +6,7 @@
   --primary-background-color: rgba(89, 144, 220, 0.05);
   --body-background-color: #f9fbfc;
   --body-color: #0f172a;
-  --text-grey-color: #64738b;
+  --text-grey-color: #59667c;
   --hr-color: #cce0ff;
 }
 
@@ -29,10 +29,10 @@
 }
 
 html {
-  font-size: 24px;
   font-size: 125%;
   font-family:
-    Alegreya Sans,
+    "Source Sans 3",
+    "Source Sans 3 Fallback",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -167,7 +167,7 @@ details > img {
 }
 
 .header__name {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
   flex: 1;
@@ -176,13 +176,23 @@ details > img {
 .header__links {
   display: flex;
   order: 1;
-  gap: 0.5rem;
+  gap: 0.25rem;
   width: 100%;
+}
+
+.header__links a {
+  padding: 0.05rem 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.header__links a:hover {
+  background-color: var(--primary-background-color);
 }
 
 .header__links a.active {
   color: var(--primary-color-active);
-  text-decoration-thickness: 0.075rem;
+  background-color: var(--primary-background-color);
   font-weight: 700;
 }
 
@@ -212,18 +222,95 @@ details > img {
   margin-bottom: 0.25rem;
 }
 
-.subscribe {
-  padding-left: 0.25rem;
-}
-.subscribe svg {
-  width: 0.5rem;
-  height: 0.5rem;
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0 1.5rem;
 }
 
-.page #posts > a {
-  display: block;
+.intro__hi {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+}
+
+.intro__lead {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-wrap: pretty;
+}
+
+.intro__more {
+  color: var(--text-grey-color);
+}
+
+/* ʒ is outside the Latin subset; a system font avoids downloading latin-ext (60 KB) for one glyph */
+.ipa {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--text-grey-color);
+}
+
+.subscribe {
+  display: inline-flex;
+  padding-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.subscribe a {
+  display: inline-flex;
+  color: var(--text-grey-color);
+}
+
+.subscribe a:hover {
+  color: var(--primary-color);
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--hr-color);
+}
+
+.post-list li:last-child {
+  border-bottom: 0;
+}
+
+.post-list time {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  color: var(--text-grey-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.project-list li {
+  grid-template-columns: 1fr;
+}
+
+.project-list__desc {
+  color: var(--text-grey-color);
+}
+
+.badge {
+  font-size: 0.65rem;
   line-height: 1;
-  margin-top: 0.5rem;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-grey-color);
+  background-color: var(--primary-background-color);
 }
 
 .footer {
@@ -295,7 +382,7 @@ details > img {
     flex: 1;
   }
 
-  .header__links a {
+  .header__links a:first-child {
     margin-left: 0.5rem;
   }
 
@@ -312,10 +399,16 @@ details > img {
     text-align: right;
   }
 
-  .page #posts > a {
-    display: inline;
-    line-height: initial;
-    margin-top: 0;
+  .post-list li {
+    grid-template-columns: 6rem 1fr auto;
+  }
+
+  .post-list time {
+    grid-column: auto;
+  }
+
+  .project-list li {
+    grid-template-columns: 12rem 1fr;
   }
 }
 

@@ -1,20 +1,27 @@
-<section id="about-me">
-  <p>
+<section id="about-me" class="intro">
+  <p class="intro__hi">
     {% if 'kk' in lang %}
       Сәлем
     {% else %}
       Hi there
     {% endif %}
     <span class="wave">👋</span></p>
-  <p>
+  <p class="intro__lead">
     {% if 'kk' in lang %}
       Есімім Жаржан,
       <a href="https://deliveryhero.com">Delivery Hero</a>
       компаниясында веб-фронтенд саласында Staff Software Engineer болып жұмыс істеймін.
     {% else %}
       I'm Zharzhan
-      <small><code>/ʒarʒan/</code></small>, a Staff Software Engineer at
+      <span class="ipa">/ʒarʒan/</span>, a Staff Software Engineer at
       <a href="https://deliveryhero.com">Delivery Hero</a>, focused on web frontend.
+    {% endif %}
+  </p>
+  <p class="intro__more">
+    {% if 'kk' in lang %}
+      Веб-фронтенд, мансап және Германиядағы өмір туралы қазақша және ағылшынша жазамын.
+    {% else %}
+      I write about web frontend, career and life in Germany, in English and Kazakh.
     {% endif %}
   </p>
 </section>

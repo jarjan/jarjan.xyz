@@ -1,5 +1,9 @@
-{%- for blogpost in collections.blog | reverse -%}
-  <a href="{{ blogpost.url }}" lang="{{ blogpost.data.lang }}">{{ blogpost.data.title }}</a>
-  <small>{{ blogpost.data.lang }} | <time datetime="{{ blogpost.date | isoDate }}">{{ blogpost.date.toLocaleDateString("kk-KZ") }}</time></small>
-  <br/>
-{%- endfor -%}
+<ul class="post-list">
+{%- for blogpost in collections.blog | reverse %}
+  <li>
+    <time datetime="{{ blogpost.date | isoDate }}">{{ blogpost.date.toLocaleDateString("kk-KZ") }}</time>
+    <a href="{{ blogpost.url }}" lang="{{ blogpost.data.lang }}">{{ blogpost.data.title }}</a>
+    <span class="badge" title="{{ blogpost.data.lang }}">{{ blogpost.data.lang }}</span>
+  </li>
+{%- endfor %}
+</ul>
