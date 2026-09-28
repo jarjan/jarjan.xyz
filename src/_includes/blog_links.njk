@@ -4,6 +4,7 @@
     <time datetime="{{ blogpost.date | isoDate }}">{{ blogpost.date.toLocaleDateString("kk-KZ") }}</time>
     <a href="{{ blogpost.url }}" lang="{{ blogpost.data.lang }}">{{ blogpost.data.title }}</a>
     <span class="badge" title="{{ blogpost.data.lang }}">{{ blogpost.data.lang }}</span>
+    <p class="post-list__desc" lang="{{ blogpost.data.lang }}">{{ blogpost.data.description }}</p>
   </li>
 {%- endfor %}
 </ul>

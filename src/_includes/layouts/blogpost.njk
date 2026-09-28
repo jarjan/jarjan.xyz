@@ -8,7 +8,7 @@ ownHeading: true
   <header>
     <h1 class="post__title">{{ title }}</h1>
     <small>
-      <time datetime="{{ page.date | isoDate }}">{{ page.date.toLocaleDateString("kk-KZ") }}</time> | {{ content | timeToRead (lang) }}
+      <time datetime="{{ page.date | isoDate }}">{{ page.date.toLocaleDateString("kk-KZ") }}</time> · {{ content | timeToRead (lang) }}
     </small>
   </header>
   {{ content | safe }}
