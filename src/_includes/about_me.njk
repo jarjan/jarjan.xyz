@@ -25,4 +25,9 @@
       I write about web frontend, career and life in Germany, in English and Kazakh.
     {% endif %}
   </p>
+  <p class="intro__now">
+    <span class="intro__now-label">{{ 'Қазір' if lang == 'kk' else 'Now' }}</span>
+    {{ now.text[lang] }}
+    · <time datetime="{{ now.date | isoDate }}">{{ now.date | monthYear(lang) }}</time>
+  </p>
 </section>

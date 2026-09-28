@@ -8,6 +8,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "./" });
 
   eleventyConfig.addFilter("isoDate", (date) => date.toISOString().slice(0, 10));
+  eleventyConfig.addFilter("monthYear", (date, lang) =>
+    date.toLocaleDateString(lang === "kk" ? "kk-KZ" : "en-GB", { month: "long", year: "numeric" }),
+  );
 
   // minified HTML
   eleventyConfig.addTransform("htmlmin", function (content) {
