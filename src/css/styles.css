@@ -810,3 +810,145 @@ details > img {
     transform: rotate(10deg);
   }
 }
+
+/* Print: ink on paper, nothing hidden behind clicks, no screen-only chrome */
+@page {
+  margin: 1.5cm 1.75cm;
+}
+
+@media print {
+  :root {
+    --primary-color: #1f4f94;
+    --primary-color-active: #1f4f94;
+    --body-background-color: #fff;
+    --body-color: #000;
+    --text-grey-color: #4a5568;
+    --hr-color: #cbd5e1;
+  }
+
+  html {
+    font-size: 11pt;
+  }
+
+  body {
+    display: block;
+    min-height: 0;
+  }
+
+  /* The page margins already frame the content */
+  .header,
+  .content,
+  .footer {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header {
+    padding-top: 0;
+  }
+
+  .header__links,
+  .header__lang,
+  .subscribe,
+  body > hr:first-of-type {
+    display: none;
+  }
+
+  .header__logo svg,
+  .intro__photo {
+    box-shadow: 0 0 0 1px var(--hr-color);
+  }
+
+  .intro {
+    padding-top: 0.5rem;
+  }
+
+  /* Expand every <details>, the summary stays as the caption */
+  details {
+    border-width: 1px;
+  }
+
+  details::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+
+  details summary::-webkit-details-marker,
+  details summary::marker {
+    content: "";
+  }
+
+  details > summary {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  /* Tall scans would take a page each, keep them to about a third of one */
+  details > img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 9cm;
+    margin: 0 auto;
+  }
+
+  /* Backgrounds are dropped by most printers, so the quote bar becomes a border */
+  blockquote {
+    border-left: 3px solid var(--primary-color);
+  }
+
+  blockquote::before {
+    display: none;
+  }
+
+  /* Links can't be clicked on paper, so spell out where external ones go */
+  .post a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: var(--text-grey-color);
+    overflow-wrap: anywhere;
+  }
+
+  .post-list li {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .footer {
+    padding-bottom: 0;
+  }
+
+  .footer__links a:first-child::after {
+    content: none;
+  }
+
+  h1,
+  h2,
+  summary {
+    break-after: avoid;
+  }
+
+  blockquote,
+  details,
+  img,
+  .post-list li,
+  .postcard,
+  .footer {
+    break-inside: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
