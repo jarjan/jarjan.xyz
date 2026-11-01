@@ -91,6 +91,10 @@
       <div class="footer__links">
         {% include 'contacts_links.njk' %}
       </div>
+      {# Posts carry the disclaimer at the end of the article, so the footer only shows it elsewhere #}
+      {% if not page.url.startsWith('/blog/') %}
+        <p class="footer__disclaimer" id="disclaimer">{{ disclaimer[lang] or disclaimer.en }}</p>
+      {% endif %}
     </footer>
     <script type="application/ld+json">
       {

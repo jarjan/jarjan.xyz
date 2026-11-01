@@ -451,6 +451,25 @@ details > img {
   color: var(--body-color);
 }
 
+.footer__disclaimer {
+  order: 2;
+  font-size: inherit;
+  color: var(--text-grey-color);
+}
+
+.post > .disclaimer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hr-color);
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  color: var(--text-grey-color);
+}
+
+.post > .disclaimer p {
+  font-size: inherit;
+}
+
 .post > header {
   display: flex;
   flex-direction: column;
@@ -652,6 +671,7 @@ details > img {
 
   .footer {
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0;
   }
 
@@ -671,6 +691,11 @@ details > img {
 
   .footer__links br {
     display: inline;
+  }
+
+  .footer__disclaimer {
+    flex-basis: 100%;
+    margin-top: 1rem;
   }
 
   .post-list li {
