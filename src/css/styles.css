@@ -593,8 +593,15 @@ body > .disclaimer {
   font-weight: var(--weight-semibold);
 }
 
-/* The nav has no height, so it sticks for the whole article without pushing the text */
-@media (min-width: 1340px) {
+@media (min-width: 1000px) {
+  /* Shift the page right until the left margin fits the contents */
+  body:has(.toc) :is(.header, .content, .footer) {
+    width: calc(100% - 13rem);
+    margin-left: max((100% - var(--page-width)) / 2, 13rem);
+    margin-right: auto;
+  }
+
+  /* The nav has no height, so it sticks for the whole article without pushing the text */
   .toc {
     position: sticky;
     top: var(--space-5);
@@ -606,7 +613,7 @@ body > .disclaimer {
     position: absolute;
     top: 0;
     right: calc(100% + var(--space-6));
-    width: min(13rem, (100vw - var(--page-width)) / 2 - var(--space-7));
+    width: clamp(10rem, (100vw - var(--page-width)) / 2 - var(--space-7), 13rem);
     max-height: calc(100vh - 2 * var(--space-5));
     overflow-y: auto;
   }
