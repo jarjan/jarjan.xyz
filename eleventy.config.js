@@ -12,7 +12,6 @@ export default function (eleventyConfig) {
     date.toLocaleDateString(lang === "kk" ? "kk-KZ" : "en-GB", { month: "long", year: "numeric" }),
   );
 
-  // minified HTML
   eleventyConfig.addTransform("htmlmin", function (content) {
     if ((this.page.outputPath || "").endsWith(".html")) {
       let minified = htmlmin.minify(content, {
@@ -26,7 +25,6 @@ export default function (eleventyConfig) {
       return minified;
     }
 
-    // If not an HTML output, return content as-is
     return content;
   });
 

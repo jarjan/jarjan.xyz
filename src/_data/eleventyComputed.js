@@ -1,4 +1,4 @@
 export default {
-  // UI strings for the page language; posts in other languages (e.g. ru) use English UI
+  // UI strings; languages other than kk use English
   t: (data) => data.i18n[data.lang === "kk" ? "kk" : "en"],
 };
