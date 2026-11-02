@@ -10,6 +10,7 @@ export default {
     blogPosts: "Blog posts",
     subscribe: "Subscribe",
     petProjects: "Pet projects",
+    disclaimer: "Disclaimer",
   },
   kk: {
     name: "Жаржан Құлмырза",
@@ -22,5 +23,6 @@ export default {
     blogPosts: "Блог жазбалары",
     subscribe: "Жазылу",
     petProjects: "Жеке жобалар",
+    disclaimer: "Ескерту",
   },
 };

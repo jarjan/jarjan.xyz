@@ -1,0 +1,4 @@
+{% set disclaimerLang = lang if disclaimer[lang] else 'en' %}
+<aside class="disclaimer" id="disclaimer" lang="{{ disclaimerLang }}" aria-label="{{ t.disclaimer }}">
+  <p>{{ disclaimer[disclaimerLang] | safe }}</p>
+</aside>

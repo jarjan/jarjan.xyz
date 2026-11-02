@@ -76,6 +76,10 @@
     <main class="content">
       {{ content | safe }}
     </main>
+    {# Posts render it inside the article; elsewhere it sits just above the footer #}
+    {% if not page.url.startsWith('/blog/') %}
+      {% include 'disclaimer.njk' %}
+    {% endif %}
     <hr/>
     <footer class="footer">
       <div class="footer__copy">
