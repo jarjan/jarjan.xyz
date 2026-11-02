@@ -93,7 +93,7 @@
       </div>
       {# Posts carry the disclaimer at the end of the article, so the footer only shows it elsewhere #}
       {% if not page.url.startsWith('/blog/') %}
-        <p class="footer__disclaimer" id="disclaimer">{{ disclaimer[lang] or disclaimer.en }}</p>
+        <p class="footer__disclaimer" id="disclaimer">{{ (disclaimer[lang] or disclaimer.en) | safe }}</p>
       {% endif %}
     </footer>
     <script type="application/ld+json">
