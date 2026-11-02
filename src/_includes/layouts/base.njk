@@ -75,6 +75,10 @@
     <hr/>
     <main class="content">
       {{ content | safe }}
+      {# Posts carry the disclaimer at the end of the article, other pages at the end of the content #}
+      {% if not page.url.startsWith('/blog/') %}
+        {% include 'disclaimer.njk' %}
+      {% endif %}
     </main>
     <hr/>
     <footer class="footer">
@@ -91,10 +95,6 @@
       <div class="footer__links">
         {% include 'contacts_links.njk' %}
       </div>
-      {# Posts carry the disclaimer at the end of the article, so the footer only shows it elsewhere #}
-      {% if not page.url.startsWith('/blog/') %}
-        <p class="footer__disclaimer" id="disclaimer">{{ (disclaimer[lang] or disclaimer.en) | safe }}</p>
-      {% endif %}
     </footer>
     <script type="application/ld+json">
       {

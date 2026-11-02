@@ -12,8 +12,5 @@ ownHeading: true
     </small>
   </header>
   {{ content | safe }}
-  {% set disclaimerLang = lang if disclaimer[lang] else 'en' %}
-  <aside class="disclaimer" lang="{{ disclaimerLang }}" aria-label="{{ t.disclaimer }}">
-    <p>{{ disclaimer[disclaimerLang] | safe }}</p>
-  </aside>
+  {% include 'disclaimer.njk' %}
 </article>
