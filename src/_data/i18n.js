@@ -11,6 +11,7 @@ export default {
     subscribe: "Subscribe",
     petProjects: "Pet projects",
     disclaimer: "Disclaimer",
+    contents: "Contents",
   },
   kk: {
     name: "Жаржан Құлмырза",
@@ -24,5 +25,6 @@ export default {
     subscribe: "Жазылу",
     petProjects: "Жеке жобалар",
     disclaimer: "Ескерту",
+    contents: "Мазмұны",
   },
 };

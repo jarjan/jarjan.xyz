@@ -11,6 +11,28 @@ ownHeading: true
       <time datetime="{{ page.date | isoDate }}">{{ page.date.toLocaleDateString("kk-KZ") }}</time> · {{ content | timeToRead (lang) }}
     </small>
   </header>
+  {% set headings = content | toc %}
+  {% if headings.length >= 3 and toc !== false %}
+    <nav class="toc" aria-labelledby="toc-title">
+      <div class="toc__inner">
+        <p class="toc__title" id="toc-title">{{ t.contents }}</p>
+        <ol class="toc__list">
+          {% for heading in headings %}
+            <li>
+              <a href="#{{ heading.id }}">{{ heading.text | safe }}</a>
+              {% if heading.children.length %}
+                <ol>
+                  {% for child in heading.children %}
+                    <li><a href="#{{ child.id }}">{{ child.text | safe }}</a></li>
+                  {% endfor %}
+                </ol>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </nav>
+  {% endif %}
   {{ content | safe }}
   {% include 'disclaimer.njk' %}
 </article>

@@ -191,7 +191,8 @@ small {
 }
 
 .badge,
-.intro__now-label {
+.intro__now-label,
+.toc__title {
   font-size: var(--text-2xs);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-none);
@@ -546,13 +547,84 @@ body > .disclaimer {
   line-height: var(--leading-relaxed);
 }
 
-.post h2 > a[name] {
+.post :is(h2, h3)[id] {
   scroll-margin-top: var(--space-4);
 }
 
 .post h2 {
   margin-top: var(--space-5);
   margin-bottom: var(--space-2);
+}
+
+.toc {
+  margin-bottom: var(--space-5);
+}
+
+.toc__title {
+  margin-bottom: var(--space-2);
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+/* Overrides `.post li` */
+.toc li {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+.toc a {
+  color: var(--color-text-muted);
+}
+
+.toc a:hover {
+  color: var(--color-accent-strong);
+}
+
+.toc__list {
+  scroll-target-group: auto;
+}
+
+.toc a:target-current {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+/* The nav has no height, so it sticks for the whole article without pushing the text */
+@media (min-width: 1340px) {
+  .toc {
+    position: sticky;
+    top: var(--space-5);
+    height: 0;
+    margin: 0;
+  }
+
+  .toc__inner {
+    position: absolute;
+    top: 0;
+    right: calc(100% + var(--space-6));
+    width: min(13rem, (100vw - var(--page-width)) / 2 - var(--space-7));
+    max-height: calc(100vh - 2 * var(--space-5));
+    overflow-y: auto;
+  }
+
+  .toc ol {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .toc li {
+    margin-bottom: var(--space-1);
+    line-height: var(--leading-snug);
+  }
+
+  .toc li ol {
+    margin-top: var(--space-1);
+    padding-left: var(--space-3);
+  }
 }
 
 .postcard {
@@ -797,7 +869,7 @@ body > .disclaimer {
     }
   }
 
-  .post h2:has(> a:target) {
+  .post :is(h2, h3):target {
     animation: target-highlight 1.5s ease-out;
   }
 
@@ -917,6 +989,7 @@ body > .disclaimer {
   .header__links,
   .header__lang,
   .subscribe,
+  .toc,
   body > hr:first-of-type {
     display: none;
   }
