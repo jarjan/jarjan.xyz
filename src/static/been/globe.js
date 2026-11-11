@@ -1,4 +1,4 @@
-// Spinning globe for /been/. Borders come from world-*.json and the d3-geo
+// Spinning globe for /been/. Borders come from world.json and the d3-geo
 // bundle in geo.js (both made by scripts/been-globe.js), places from the
 // page's #been-data.
 (async () => {
@@ -15,15 +15,13 @@
   const RAD = Math.PI / 180;
   const SPIN = 6; // degrees per second
   const RESUME = 2500; // ms of calm before spinning again
-  const FLIGHT = 900; // ms to fly to a city
-  const ZOOM = 4; // close-up when a city is picked
-  const DETAIL = 1.5; // zoom from which the detailed borders are drawn
+  const FLIGHT = 900; // ms to turn to a city
   const MARGIN = 10; // px around the globe for city rings
 
   const countryIds = new Set(places.countries.map((c) => c.id));
 
-  async function load(level) {
-    const topo = await (await fetch(`/been/world-${level}.json`)).json();
+  const topo = await (await fetch("/been/world.json")).json();
+  const map = (() => {
     const { countries, divisions } = topo.objects;
     const collection = (features) => ({ type: "FeatureCollection", features });
     return {
@@ -34,17 +32,7 @@
       countryBorders: mesh(topo, countries, (a, b) => a !== b),
       divisionBorders: mesh(topo, divisions, (a, b) => a !== b),
     };
-  }
-
-  // The detailed map only loads once someone zooms in
-  const maps = { coarse: await load("coarse"), fine: null };
-  let fineLoading = null;
-  const loadFine = () => {
-    fineLoading ??= load("fine").then((map) => {
-      maps.fine = map;
-      request();
-    });
-  };
+  })();
 
   const flags = Object.fromEntries(places.countries.map((c) => [c.code, c.flag]));
   const cities = places.cities.map((c) => ({
@@ -60,7 +48,7 @@
   const path = geoPath(projection, ctx);
 
   // View centre in degrees; starts between Europe and Kazakhstan
-  const view = { lon: 40, lat: 32, zoom: 1 };
+  const view = { lon: 40, lat: 32 };
   let size = 0;
   let dpr = 1;
   let colors = {};
@@ -90,7 +78,7 @@
     request();
   }
 
-  const radius = () => (size / 2 - MARGIN) * view.zoom;
+  const radius = () => size / 2 - MARGIN;
 
   function fill(shape, color) {
     ctx.beginPath();
@@ -112,36 +100,30 @@
   function draw() {
     const R = radius();
     const c = size / 2;
-    const lens = size / 2 - MARGIN; // zoomed in, the globe stays inside this circle
-    const map = (view.zoom >= DETAIL && maps.fine) || maps.coarse;
     projection.rotate([-view.lon, -view.lat]).scale(R).translate([c, c]);
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, size, size);
-    ctx.save();
     ctx.beginPath();
-    ctx.arc(c, c, Math.min(R, lens), 0, 2 * Math.PI);
+    path({ type: "Sphere" });
     ctx.fillStyle = colors.sea;
     ctx.fill();
     ctx.lineWidth = 1;
     ctx.strokeStyle = colors.rim;
     ctx.stroke();
-    ctx.clip();
 
     fill(map.land, colors.land);
     fill(map.visited, colors.country);
     fill(map.divisions, colors.region);
-    const line = Math.min(1, 0.5 * view.zoom);
-    stroke(map.divisionBorders, colors.border, line * 0.6, 0.8);
-    stroke(map.countryBorders, colors.border, line);
+    stroke(map.divisionBorders, colors.border, 0.3, 0.8);
+    stroke(map.countryBorders, colors.border, 0.5);
 
     const sp0 = Math.sin(view.lat * RAD);
     const cp0 = Math.cos(view.lat * RAD);
     for (const city of cities) {
-      // z > 0 is the visible hemisphere; outside the lens counts as hidden too
+      // z > 0 is the visible hemisphere
       city.z = sp0 * city.sinLat + cp0 * city.cosLat * Math.cos((city.lon - view.lon) * RAD);
       [city.x, city.y] = projection([city.lon, city.lat]);
-      if (Math.hypot(city.x - c, city.y - c) > lens) city.z = -1;
     }
     const focus = selected || hovered;
     const order = cities.filter((city) => city.z > 0 && city !== focus);
@@ -156,7 +138,6 @@
       ctx.stroke();
       ctx.fill();
     }
-    ctx.restore();
 
     if (focus && focus.z > 0.05) {
       label.textContent = `${flags[focus.country]} ${focus.name}`;
@@ -197,21 +178,20 @@
     });
   }
 
-  // Fly to a city and zoom in, or zoom back out with null
+  // Turn to a city and hold it there, or let go with null
   function select(city) {
     selected = city;
     calmSince = performance.now();
-    if (city) loadFine();
     for (const b of buttons) b.setAttribute("aria-pressed", String(b.dataset.city === city?.name));
-    const to = city ? { lon: city.lon, lat: Math.max(-60, Math.min(60, city.lat)), zoom: ZOOM } : { zoom: 1 };
-    if (reduceMotion.matches) {
-      flight = null;
-      Object.assign(view, to);
-    } else {
-      const from = { ...view };
-      if (city) to.lon = view.lon + (((city.lon - view.lon + 540) % 360) - 180);
-      for (const k in to) to[k] -= from[k];
-      flight = { start: performance.now(), from, to };
+    if (city) {
+      const lat = Math.max(-60, Math.min(60, city.lat));
+      if (reduceMotion.matches) {
+        flight = null;
+        Object.assign(view, { lon: city.lon, lat });
+      } else {
+        const dLon = ((city.lon - view.lon + 540) % 360) - 180;
+        flight = { start: performance.now(), from: { ...view }, to: { lon: dLon, lat: lat - view.lat } };
+      }
     }
     request();
   }
@@ -233,11 +213,7 @@
     if (event.button !== 0) return;
     canvas.setPointerCapture(event.pointerId);
     drag = { x: event.clientX, y: event.clientY, lon: view.lon, lat: view.lat, moved: false };
-    // The hand takes over turning; a zoom in progress carries on
-    if (flight) {
-      delete flight.to.lon;
-      delete flight.to.lat;
-    }
+    flight = null;
     canvas.classList.add("is-dragging");
   });
 
@@ -267,7 +243,7 @@
     drag = null;
     calmSince = performance.now();
     canvas.classList.remove("is-dragging");
-    // Tapping a city zooms to it, tapping anywhere else zooms back out
+    // Tapping a city turns to it, tapping anywhere else lets the globe spin again
     if (tapped) select(cityAt(event, event.pointerType === "mouse" ? 10 : 20));
     else request();
   };

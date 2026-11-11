@@ -1,7 +1,6 @@
 // Builds the data behind the hidden /been/ globe:
-//   src/static/been/world-*.json TopoJSON with every country and the first-level
-//                               administrative divisions of visited countries,
-//                               coarse for the whole globe and fine for close-ups
+//   src/static/been/world.json  TopoJSON with every country and the visited
+//                               first-level administrative divisions
 //   src/static/been/geo.js      d3-geo and topojson-client, bundled: the site's
 //                               CSP only runs scripts it serves itself
 //   src/_data/divisions.json    visited divisions per country, for the page
@@ -42,14 +41,9 @@ const GB = "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/mai
 const NE_ADMIN1 =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson";
 
-// Simplification: drop points whose triangle is smaller than `point` and rings
-// smaller than `ring`, in steradians (1e-6 sr ≈ 40 km²; a pixel is about
-// 600 km² on the whole globe and 70 km² zoomed in). The coarse level only
-// keeps visited divisions: other borders are too fine to see from that far.
-const LEVELS = {
-  coarse: { point: 1e-5, ring: 1e-5, divisions: (f) => f.properties.v },
-  fine: { point: 8e-7, ring: 2e-7, divisions: () => true },
-};
+// Simplification: drop points whose triangle, and rings whose area, is smaller
+// than this many steradians (1e-5 sr ≈ 400 km², about a pixel on the globe)
+const MIN_AREA = 1e-5;
 
 // geoBoundaries has statistical regions or outdated divisions for these, so
 // group Natural Earth's admin-1 units into today's first-level divisions instead
@@ -287,23 +281,22 @@ for (const country of places.countries) {
   console.log(`${country.name}: ${list.length} divisions, visited ${visited[country.code].join(", ")}`);
 }
 
-for (const [level, { point, ring, divisions: keep }] of Object.entries(LEVELS)) {
-  const full = topology(
-    {
-      countries: { type: "FeatureCollection", features: countries },
-      divisions: { type: "FeatureCollection", features: divisions.filter(keep) },
-    },
-    1e6,
-  );
-  const topo = simplify(presimplify(full, sphericalTriangleArea), point);
-  const out = quantize(filter(topo, filterWeight(topo, ring, sphericalRingArea)), 1e5);
-  await writeFile(join(ROOT, `src/static/been/world-${level}.json`), JSON.stringify(out));
-}
+// Only visited divisions are drawn, so only they are kept
+const full = topology(
+  {
+    countries: { type: "FeatureCollection", features: countries },
+    divisions: { type: "FeatureCollection", features: divisions.filter((f) => f.properties.v) },
+  },
+  1e6,
+);
+const topo = simplify(presimplify(full, sphericalTriangleArea), MIN_AREA);
+const out = quantize(filter(topo, filterWeight(topo, MIN_AREA, sphericalRingArea)), 1e5);
+await writeFile(join(ROOT, "src/static/been/world.json"), JSON.stringify(out));
 await writeFile(join(ROOT, "src/_data/divisions.json"), JSON.stringify(visited, null, 2) + "\n");
 
 await build({
   stdin: {
-    contents: `export { geoOrthographic, geoPath, geoGraticule10 } from "d3-geo";
+    contents: `export { geoOrthographic, geoPath } from "d3-geo";
       export { feature, merge, mesh } from "topojson-client";`,
     resolveDir: ROOT,
   },
@@ -315,4 +308,4 @@ await build({
   outfile: join(ROOT, "src/static/been/geo.js"),
   logLevel: "warning",
 });
-console.log("Wrote world-*.json, geo.js and divisions.json");
+console.log("Wrote world.json, geo.js and divisions.json");
