@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+title: Been there
+description: Countries, regions and cities I have visited, on a spinning globe.
+lang: en
+ownHeading: true
+noindex: true
+eleventyExcludeFromCollections: true
+permalink: /been/
+---
+
+{% set regionCount = 0 %}
+{% for code, names in divisions %}{% set regionCount = regionCount + names.length %}{% endfor %}
+<div class="page been">
+  <h1 class="been__title">Been there</h1>
+  <p class="been__stats">
+    <span><strong>{{ places.countries.length }}</strong> countries</span>
+    <span><strong>{{ places.cities.length }}</strong> cities</span>
+    <span><strong>{{ regionCount }}</strong> regions</span>
+  </p>
+
+  <figure class="globe">
+    <canvas class="globe__canvas" role="img" aria-label="Spinning globe with the countries, regions and cities I have visited highlighted. The full list follows."></canvas>
+    <p class="globe__label" hidden></p>
+    <figcaption class="globe__legend">
+      <span class="globe__key globe__key--city">City</span>
+      <span class="globe__key globe__key--country">Country</span>
+      <span class="globe__key globe__key--region">Region</span>
+    </figcaption>
+  </figure>
+
+  <section aria-labelledby="been-countries">
+    <h2 id="been-countries">Countries and cities</h2>
+    <ul class="been__list">
+    {%- for country in places.countries %}
+      <li class="been__country">
+        <span class="been__flag" aria-hidden="true">{{ country.flag }}</span>
+        <div>
+          <span class="been__name">{{ country.name }}</span>
+          <ul class="been__cities">
+          {%- for city in country.cities %}
+            <li><button type="button" class="been__city" data-city="{{ city }}">{{ city }}</button></li>
+          {%- endfor %}
+          </ul>
+          <p class="been__regions">Regions: {{ divisions[country.code] | join(", ") }}</p>
+        </div>
+      </li>
+    {%- endfor %}
+    </ul>
+  </section>
+</div>
+
+<script type="application/json" id="been-data">{{ places | dump | safe }}</script>
+<script src="/been/geo.js" defer></script>
+<script src="/been/globe.js" defer></script>

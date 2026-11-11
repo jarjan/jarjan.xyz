@@ -1,0 +1,94 @@
+{
+  "AT": [
+    "Salzburg"
+  ],
+  "BE": [
+    "Brussels-Capital Region"
+  ],
+  "CZ": [
+    "Prague"
+  ],
+  "DK": [
+    "Capital Region of Denmark"
+  ],
+  "FR": [
+    "Île-de-France"
+  ],
+  "DE": [
+    "Bavaria",
+    "Berlin",
+    "Brandenburg",
+    "Hamburg",
+    "Hesse",
+    "Mecklenburg-Western Pomerania",
+    "North Rhine-Westphalia",
+    "Saxony",
+    "Saxony-Anhalt",
+    "Schleswig-Holstein"
+  ],
+  "GR": [
+    "Attica"
+  ],
+  "IT": [
+    "Sicily"
+  ],
+  "KZ": [
+    "Akmola Region",
+    "Aktobe Region",
+    "Almaty",
+    "Almaty Region",
+    "Astana",
+    "Jambyl Region",
+    "Karaganda Region",
+    "Kyzylorda Region",
+    "Mangystau Region",
+    "Shymkent",
+    "Turkistan Region"
+  ],
+  "KG": [
+    "Issyk-Kul Region"
+  ],
+  "NL": [
+    "North Holland",
+    "South Holland"
+  ],
+  "NO": [
+    "Oslo"
+  ],
+  "PL": [
+    "Lesser Poland Voivodeship"
+  ],
+  "QA": [
+    "Al Wakrah",
+    "Doha"
+  ],
+  "SG": [
+    "Central Region"
+  ],
+  "SI": [
+    "Ljubljana"
+  ],
+  "KR": [
+    "Seoul"
+  ],
+  "ES": [
+    "Balearic Islands",
+    "Catalonia",
+    "Community of Madrid",
+    "Valencian Community"
+  ],
+  "TR": [
+    "Ankara",
+    "Antalya",
+    "Istanbul"
+  ],
+  "AE": [
+    "Dubai"
+  ],
+  "GB": [
+    "England"
+  ],
+  "UZ": [
+    "Tashkent"
+  ]
+}
