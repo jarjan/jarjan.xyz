@@ -21,7 +21,7 @@
   "license": "MIT",
   "homepage": "https://jarjan.xyz",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy": "^3.1.8",
     "@11ty/eleventy-plugin-rss": "^3.1.0",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.6.0",
     "@fontsource/source-sans-3": "^5.3.1",
