@@ -943,6 +943,52 @@ body > .disclaimer {
   color: var(--color-text-muted);
 }
 
+/* Wide screens: the globe stays in view on the left while the list scrolls */
+@media (min-width: 1000px) {
+  body:has(.been) {
+    --page-width: 64rem;
+  }
+
+  .been {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "title title"
+      "stats stats"
+      "home home"
+      "globe places";
+    column-gap: var(--space-6);
+  }
+
+  .been__title {
+    grid-area: title;
+  }
+
+  .been__stats {
+    grid-area: stats;
+  }
+
+  .been__home {
+    grid-area: home;
+  }
+
+  .been__places {
+    grid-area: places;
+  }
+
+  .globe {
+    grid-area: globe;
+    align-self: start;
+    position: sticky;
+    top: var(--space-5);
+  }
+
+  /* Globe and legend fit the screen height */
+  .globe__canvas {
+    max-width: min(28rem, 100dvh - 2 * var(--space-5) - 3rem);
+  }
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;
