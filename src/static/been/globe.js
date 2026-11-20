@@ -126,21 +126,34 @@
       [city.x, city.y] = projection([city.lon, city.lat]);
     }
     const focus = selected || hovered;
-    const order = cities.filter((city) => city.z > 0 && city !== focus);
+    // Home sits above the other cities, the focused city above everything
+    const order = cities
+      .filter((city) => city.z > 0 && city !== focus)
+      .sort((a, b) => a.home - b.home);
     if (focus && focus.z > 0) order.push(focus);
     ctx.fillStyle = colors.city;
     ctx.strokeStyle = colors.ring;
     for (const city of order) {
-      const big = city === focus;
+      const big = city === focus || city.home;
+      const scale = 0.6 + 0.4 * city.z;
+      if (city.home) {
+        // A ring around the dot, like the legend key
+        ctx.beginPath();
+        ctx.arc(city.x, city.y, 7.5 * scale, 0, 2 * Math.PI);
+        ctx.lineWidth = 1.5;
+        ctx.strokeStyle = colors.city;
+        ctx.stroke();
+        ctx.strokeStyle = colors.ring;
+      }
       ctx.beginPath();
-      ctx.arc(city.x, city.y, (big ? 4 : 2.75) * (0.6 + 0.4 * city.z), 0, 2 * Math.PI);
+      ctx.arc(city.x, city.y, (big ? 4 : 2.75) * scale, 0, 2 * Math.PI);
       ctx.lineWidth = big ? 2 : 1.25;
       ctx.stroke();
       ctx.fill();
     }
 
     if (focus && focus.z > 0.05) {
-      label.textContent = `${flags[focus.country]} ${focus.name}`;
+      label.textContent = `${flags[focus.country]} ${focus.name}${focus.home ? " · Home" : ""}`;
       label.style.left = `${canvas.offsetLeft + focus.x}px`;
       label.style.top = `${canvas.offsetTop + focus.y}px`;
       label.hidden = false;

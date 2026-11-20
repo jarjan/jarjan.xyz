@@ -88,11 +88,11 @@
       <div class="footer__copy">
         {% if lang == 'kk' %}
           <span aria-hidden="true">🇰🇿</span> Қазақстанда туып өстім.
-          <span aria-hidden="true">🇩🇪</span> Германияда код жазып өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
+          <span aria-hidden="true">🇩🇪</span> <a href="/been/"{% if page.url == '/been/' %} aria-current="page"{% endif %}>Германияда</a> код жазып өмір сүремін. <br/> © Жаржан Құлмырза {{ currentYear }}
         {% else %}
           Born and raised in
           <span aria-hidden="true">🇰🇿</span> Kazakhstan. Living and coding in
-          <span aria-hidden="true">🇩🇪</span> Germany. <br/> © Zharzhan Kulmyrza {{ currentYear }}
+          <span aria-hidden="true">🇩🇪</span> <a href="/been/"{% if page.url == '/been/' %} aria-current="page"{% endif %}>Germany</a>. <br/> © Zharzhan Kulmyrza {{ currentYear }}
         {% endif %}
       </div>
       <div class="footer__links">

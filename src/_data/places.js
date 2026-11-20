@@ -33,6 +33,9 @@ const countries = [
 
 const divisions = [];
 
+// Where I live now, marked on the globe and in the list
+const home = "Berlin";
+
 const cities = [
   ["Aktau", "KZ", 43.65, 51.2],
   ["Aktobe", "KZ", 50.28, 57.17],
@@ -123,5 +126,9 @@ export default {
     cities: cities.filter((c) => c[1] === code).map((c) => c[0]),
   })),
   divisions: divisions.map(([country, name]) => ({ country, name })),
-  cities: cities.map(([name, country, lat, lon]) => ({ name, country, lat, lon })),
+  cities: cities.map(([name, country, lat, lon]) => ({ name, country, lat, lon, home: name === home })),
+  home: (() => {
+    const [name, code] = cities.find((c) => c[0] === home);
+    return { name, country: countries.find((c) => c[1] === code)[0], flag: flag(code) };
+  })(),
 };

@@ -18,11 +18,15 @@ permalink: /been/
     <span><strong>{{ places.cities.length }}</strong> cities</span>
     <span><strong>{{ regionCount }}</strong> regions</span>
   </p>
+  <p class="been__home">
+    Living in <button type="button" class="been__city" data-city="{{ places.home.name }}">{{ places.home.name }}</button>, {{ places.home.country }} <span aria-hidden="true">{{ places.home.flag }}</span>
+  </p>
 
   <figure class="globe">
     <canvas class="globe__canvas" role="img" aria-label="Spinning globe with the countries, regions and cities I have visited highlighted. The full list follows."></canvas>
     <p class="globe__label" hidden></p>
     <figcaption class="globe__legend">
+      <span class="globe__key globe__key--home">Home</span>
       <span class="globe__key globe__key--city">City</span>
       <span class="globe__key globe__key--country">Country</span>
       <span class="globe__key globe__key--region">Region</span>
@@ -39,7 +43,10 @@ permalink: /been/
           <span class="been__name">{{ country.name }}</span>
           <ul class="been__cities">
           {%- for city in country.cities %}
-            <li><button type="button" class="been__city" data-city="{{ city }}">{{ city }}</button></li>
+            <li>
+              <button type="button" class="been__city" data-city="{{ city }}">{{ city }}</button>
+              {%- if city == places.home.name %} <span class="badge">Home</span>{% endif %}
+            </li>
           {%- endfor %}
           </ul>
           <p class="been__regions">Regions: {{ divisions[country.code] | join(", ") }}</p>

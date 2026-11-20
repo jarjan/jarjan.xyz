@@ -534,6 +534,14 @@ details > img {
   order: 1;
 }
 
+.footer__copy a {
+  color: inherit;
+}
+
+.footer__copy a:hover {
+  color: var(--color-accent-strong);
+}
+
 .footer__links {
   display: flex;
   flex-wrap: wrap;
@@ -850,6 +858,25 @@ body > .disclaimer {
 
 .globe__key--region::before {
   background-color: var(--globe-region);
+}
+
+/* A dot in a ring, as drawn on the globe */
+.globe__key--home::before {
+  background-color: var(--globe-city);
+  box-shadow:
+    0 0 0 0.12em var(--color-bg),
+    0 0 0 0.22em var(--globe-city);
+  margin-right: calc(var(--space-1) + 0.22em);
+  margin-left: 0.22em;
+}
+
+.been__home {
+  color: var(--color-text-muted);
+}
+
+.been__cities .badge {
+  margin-left: var(--space-1);
+  color: var(--globe-city);
 }
 
 .been__list {
