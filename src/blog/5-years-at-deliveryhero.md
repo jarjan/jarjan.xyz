@@ -1,6 +1,4 @@
 ---
-layout: layouts/blogpost.njk
-tags: blog
 date: 2023-10-04
 title: 5 years at Delivery Hero
 description: "Looking back on five years at Delivery Hero: relocating to Berlin, the pandemic, hyper-growth, redundancies and growing as an engineer."

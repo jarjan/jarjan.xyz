@@ -9,6 +9,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "./" });
 
   eleventyConfig.addFilter("isoDate", (date) => date.toISOString().slice(0, 10));
+  eleventyConfig.addFilter("lastUpdated", (posts) =>
+    new Date(Math.max(...posts.map((post) => post.data.updated || post.date))),
+  );
   eleventyConfig.addFilter("monthYear", (date, lang) =>
     date.toLocaleDateString(lang === "kk" ? "kk-KZ" : "en-GB", { month: "long", year: "numeric" }),
   );

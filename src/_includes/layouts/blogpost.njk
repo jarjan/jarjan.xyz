@@ -8,7 +8,12 @@ ownHeading: true
   <header>
     <h1 class="post__title">{{ title }}</h1>
     <small>
-      <time datetime="{{ page.date | isoDate }}">{{ page.date.toLocaleDateString("kk-KZ") }}</time> · {{ content | timeToRead (lang) }}
+      <time datetime="{{ page.date | isoDate }}">{{ page.date.toLocaleDateString("kk-KZ") }}</time>
+      {%- if updated %}
+        {%- set updatedTime %}<time datetime="{{ updated | isoDate }}">{{ updated.toLocaleDateString("kk-KZ") }}</time>{% endset %}
+        · {{ t.updated | replace("%s", updatedTime) | safe }}
+      {%- endif %}
+      · {{ t.readTime | replace("%s", content | timeToRead("kk" if lang == "kk" else "en", { style: "short" })) }}
     </small>
   </header>
   {% set headings = content | toc %}

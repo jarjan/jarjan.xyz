@@ -11,7 +11,12 @@ export default {
     subscribe: "Subscribe",
     petProjects: "Pet projects",
     disclaimer: "Disclaimer",
+    disclaimerText:
+      "<strong>AI/LLM usage disclaimer.</strong><br>Parts of this site's source code were written with the help of AI tools. All texts are written by me.",
     contents: "Contents",
+    now: "Now",
+    updated: "updated %s",
+    readTime: "%s read",
   },
   kk: {
     name: "Жаржан Құлмырза",
@@ -25,6 +30,11 @@ export default {
     subscribe: "Жазылу",
     petProjects: "Жеке жобалар",
     disclaimer: "Ескерту",
+    disclaimerText:
+      "<strong>ЖИ/LLM қолданысы туралы дисклеймер.</strong><br>Бұл сайттың кодының кейбір бөлігі ЖИ құралдарының көмегімен жазылған. Ал мәтіндерді болса өзім жаздым.",
     contents: "Мазмұны",
+    now: "Қазір",
+    updated: "%s жаңартылған",
+    readTime: "оқу уақыты %s",
   },
 };

@@ -1,3 +1,1 @@
-const today = new Date();
-
-export default today.getFullYear();
+export default new Date().getFullYear();

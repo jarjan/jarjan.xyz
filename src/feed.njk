@@ -21,7 +21,7 @@
   <link href="{{ metadata.feedUrl }}" rel="self" />
   <link href="{{ metadata.url }}" />
   <updated>{{
-    collections.blog | getNewestCollectionItemDate | dateToRfc3339
+    collections.blog | lastUpdated | dateToRfc3339
   }}</updated>
   <id>{{ metadata.url }}</id>
   <author>
@@ -33,7 +33,7 @@
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <updated>{{ (post.data.updated or post.date) | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content
       type="html"

@@ -1,14 +1,14 @@
 <section id="about-me" class="intro">
   <img class="intro__photo" src="/avatar.jpg" width="160" height="160" alt="Zharzhan Kulmyrza" fetchpriority="high"/>
   <p class="intro__hi">
-    {% if 'kk' in lang %}
+    {% if lang == 'kk' %}
       Сәлем
     {% else %}
       Hi there
     {% endif %}
     <span class="wave">👋</span></p>
   <p class="intro__lead">
-    {% if 'kk' in lang %}
+    {% if lang == 'kk' %}
       Есімім Жаржан,
       <a href="https://deliveryhero.com">Delivery Hero</a>
       компаниясында веб-фронтенд саласында Staff Software Engineer болып жұмыс істеймін.
@@ -19,7 +19,7 @@
     {% endif %}
   </p>
   <p class="intro__more">
-    {% if 'kk' in lang %}
+    {% if lang == 'kk' %}
       Веб-фронтенд, мансап және Германиядағы өмір туралы қазақша және ағылшынша жазамын.
     {% else %}
       I write about web frontend, career and life in Germany, in English and Kazakh.
@@ -27,7 +27,7 @@
   </p>
   {% set current = now[0] %}
   <p class="intro__now">
-    <span class="intro__now-label">{{ 'Қазір' if lang == 'kk' else 'Now' }}</span>
+    <span class="intro__now-label">{{ t.now }}</span>
     {% if current.url %}<a href="{{ current.url }}">{{ current.text[lang] }}</a>{% else %}{{ current.text[lang] }}{% endif %}
     · <time datetime="{{ current.date | isoDate }}">{{ current.date | monthYear(lang) }}</time>
   </p>

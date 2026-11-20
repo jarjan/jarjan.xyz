@@ -1,6 +1,4 @@
 ---
-layout: layouts/blogpost.njk
-tags: blog
 date: 2022-07-05
 title: Yet another first post
 description: "Restarting my blog in English and Kazakh, built from scratch with Eleventy."

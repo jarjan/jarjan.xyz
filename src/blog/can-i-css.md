@@ -1,6 +1,4 @@
 ---
-layout: layouts/blogpost.njk
-tags: blog
 date: 2022-08-05
 title: Can I CSS?
 description: "Nine years into frontend, I feel distant from CSS. A look back at Bootstrap, BEM and CSS-in-JS, and why CSS is better than ever."
