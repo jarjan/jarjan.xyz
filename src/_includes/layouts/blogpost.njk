@@ -41,3 +41,17 @@ ownHeading: true
   {{ content | safe }}
   {% include 'disclaimer.njk' %}
 </article>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "inLanguage": "{{ lang }}",
+    "url": "https://jarjan.xyz{{ page.url }}",
+    "image": "https://jarjan.xyz{{ ogImage }}",
+    "datePublished": "{{ page.date | isoDate }}",
+    "dateModified": "{{ (updated or page.date) | isoDate }}",
+    "author": { "@type": "Person", "name": "Zharzhan Kulmyrza", "url": "https://jarjan.xyz" }
+  }
+</script>

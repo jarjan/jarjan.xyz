@@ -1,0 +1,14 @@
+<section id="now">
+  <h2>{{ t.now }}</h2>
+  <p class="now__intro">{{ t.nowIntro | safe }}</p>
+  <ul class="post-list now-list">
+  {%- for entry in now %}
+    <li>
+      <time datetime="{{ entry.date | isoDate }}">{{ entry.date.toLocaleDateString("kk-KZ") }}</time>
+      <span class="now-list__text">
+        {%- if entry.url %}<a href="{{ entry.url }}">{{ entry.text[lang] }}</a>{% else %}{{ entry.text[lang] }}{% endif -%}
+      </span>
+    </li>
+  {%- endfor %}
+  </ul>
+</section>

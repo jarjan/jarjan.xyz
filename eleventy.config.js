@@ -31,7 +31,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTimeToRead);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginLightningCSS);
-  eleventyConfig.addPlugin(pluginSitemap, { sitemap: { hostname: "https://jarjan.xyz" } });
+  eleventyConfig.addPlugin(pluginSitemap, {
+    lastModifiedProperty: "updated",
+    sitemap: { hostname: "https://jarjan.xyz" },
+  });
 
   return {
     dir: {

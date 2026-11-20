@@ -458,6 +458,21 @@ details > img {
   color: var(--color-text-muted);
 }
 
+.now__intro {
+  color: var(--color-text-muted);
+}
+
+.now-list__text {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  line-height: var(--leading-snug);
+}
+
+/* Plain text with an underline, not a post title */
+.now-list a {
+  font-weight: inherit;
+}
+
 .project-list li {
   grid-template-columns: 1fr;
 }

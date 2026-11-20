@@ -26,10 +26,10 @@
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:type" content="{{ ogType or 'website' }}"/>
     <meta property="og:url" content="{{ pageUrl }}"/>
-    <meta property="og:image" content="https://jarjan.xyz/og-image.png"/>
+    <meta property="og:image" content="https://jarjan.xyz{{ ogImage or '/og-image.png' }}"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
-    <meta property="og:image:alt" content="Zharzhan Kulmyrza – jarjan.xyz"/>
+    <meta property="og:image:alt" content="{{ title + ' – jarjan.xyz' if ogImage else 'Zharzhan Kulmyrza – jarjan.xyz' }}"/>
     {% if ogType == 'article' %}
       <meta property="article:published_time" content="{{ page.date | isoDate }}"/>
       {% if updated %}<meta property="article:modified_time" content="{{ updated | isoDate }}"/>{% endif %}
@@ -44,10 +44,9 @@
     {% endfor %}
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
-    <link rel="me" href="https://mastodon.social/@jarjan"/>
-    <link rel="me" href="https://threads.com/@jarjanxyz"/>
-    <link rel="me" href="https://bsky.app/profile/jarjan.xyz"/>
-    <link rel="me" href="https://sifa.id/p/jarjan.xyz"/>
+    {% for social in socials %}{% if social.footer === false %}
+    <link rel="me" href="{{ social.url }}"/>
+    {% endif %}{% endfor %}
   </head>
   <body>
     <header class="header">
@@ -106,13 +105,7 @@
         "worksFor": { "@type": "Organization", "name": "Delivery Hero" },
         "url": "https://jarjan.xyz",
         "email": "hey@jarjan.xyz",
-        "sameAs": [
-          "https://github.com/jarjan",
-          "https://bsky.app/profile/jarjan.xyz",
-          "https://t.me/zharzhan",
-          "https://linkedin.com/in/zharzhan",
-          "https://threads.com/@jarjanxyz"
-        ]
+        "sameAs": [{% for social in socials %}"{{ social.url }}"{{ "," if not loop.last }}{% endfor %}]
       }
     </script>
     <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>

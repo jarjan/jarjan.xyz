@@ -27,7 +27,7 @@
   </p>
   {% set current = now[0] %}
   <p class="intro__now">
-    <span class="intro__now-label">{{ t.now }}</span>
+    <a class="intro__now-label" href="{{ t.nowUrl }}">{{ t.now }}</a>
     {% if current.url %}<a href="{{ current.url }}">{{ current.text[lang] }}</a>{% else %}{{ current.text[lang] }}{% endif %}
     · <time datetime="{{ current.date | isoDate }}">{{ current.date | monthYear(lang) }}</time>
   </p>
