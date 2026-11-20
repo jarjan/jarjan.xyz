@@ -7,9 +7,11 @@ description: "Германияда туылған қазақстандық ба�
 lang: kk
 ---
 
-> Дисклеймер.
+> __Дисклеймер.__
 >
 > Мұнда жазылған ақпарат 2024 жылға және Берлинге өзекті. Алайда Германияның басқа жерлерінде жағдай ұқсас болу керек.
+>
+> 2026 жылы Meldebescheinigung қабылданбайды, Negativbescheinigung керек, жазба түзетілді.
 
 Балалы болсаңыз, бауы берік болсын! Енді алдыңызда тек баланы өсіріп бағу емес, Германияның бюрократиясымен шайқасу да күтіп тұр.
 Осы нұсқаулықты өзім 2024 жылы Берлин қаласында балалы болғандықтан және бюрократияның көкесін басымнан өткізгендіктен басқаларға да көмек болсын деген ниетпен жаздым. Ал кеттік!
@@ -64,12 +66,14 @@ lang: kk
 
 Екі ата анада тұрақты ықтиярхат болса(_Niederlassungserlaubnis_), онда балаңызда неміс азаматтығы болады. Бұл жағдайда неміс паспортын [Bürgeramt-тан аласыз][berlin-passport].
 
-Егер де балаңыздың азаматтығын білмесеңіз, онда ол үшін Meldebescheinigung жасату керек. Қағаз түрі керек, онлайн нұсқасы тек өзіңіз атыңызға жасата аласыз. [Termin-ді мында таба аласыз][berlin-meldebescheinigung], не болмаса өз аймағыңыздың Bürgeramt-ына Meldebescheinigung сұрап email жазуға болады.
+Басқа жағдайларда Negativbescheinigung жасату керек. Оны алу үшін [LEA-ға хабарласыз][berlin-negativbescheinigung]. Туу туралы куәлік, өз паспорт ықтиярхаттарыңызды қосып жіберіңіз. Бірнеше апта, тіпті ай да күтіп қалуыңыз мүмкін.
 
+<!--
 <details>
-  <summary>Meldebescheinigung үлгісі</summary>
-  <img src='/images/meldebescheinigung.jpg' width='710' height='1000' loading='lazy' alt='Meldebescheinigung үлгісі'/>
+  <summary>Negativbescheinigung үлгісі</summary>
+  <img src='/images/negativbescheinigung.jpg' width='710' height='1000' loading='lazy' alt='Negativbescheinigung үлгісі'/>
 </details>
+-->
 
 Егер де азаматтығы қазақ десе, онда елшілік арқылы паспорт жасатуға болады. Толық ақпарат [елшілік сайтында бар][kz-botschaft-passport].
 
@@ -82,8 +86,8 @@ lang: kk
 5. Неке қию куәілігі (түпнұсқа + 2 көшірме)
 6. Еңбек келісім-шарты (түпнұсқа + алғашқы және соңғы қол қойылған беттердің 1 көшірмесі)
 7. Жоғарыдағы еңбек келісім-шарттың қазақшаға аудармасы
-8. Meldebescheinigung (түпнұсқа + 1 көшірме)
-9. Meldebescheinigung (қазақша/орысша ресми аудармасы)
+8. Negativbescheinigung (түпнұсқа + 1 көшірме)
+9. Negativbescheinigung (қазақша/орысша ресми аудармасы)
 10. Консулдық алым төленгені туралы түбіртек
 
 Құжаттарды тексеріп қабылдағаннан кейін қолыңызға түбіртек беріледі.
@@ -97,7 +101,7 @@ lang: kk
 
 Жаратылған ақша:
 
-1. Meldebescheinigung 10 еуро
+1. Negativbescheinigung 51 еуро
 2. Консулдық алым 75 еуро
 3. Аударма әр бет үшін кем дегенде ~20 еуро
 
@@ -150,7 +154,7 @@ lang: kk
 [berlin-passport]: https://service.berlin.de/dienstleistung/121151/
 [berlin-geburtskunde]: https://service.berlin.de/dienstleistung/318960/
 [berlin-apostille]: https://service.berlin.de/dienstleistung/320315/
-[berlin-meldebescheinigung]: https://service.berlin.de/dienstleistung/120702/
 [berlin-permit]: https://service.berlin.de/dienstleistung/324269/en/
+[berlin-negativbescheinigung]:https://www.berlin.de/einwanderung/ueber-uns/kontakt/artikel.1394181.php?hl=en-GB
 [de-kindergeld]: https://web.arbeitsagentur.de/opal/kgo-antraggeburt-ui/auswahl
 [de-elterngeld]: https://www.elterngeld-digital.de/
