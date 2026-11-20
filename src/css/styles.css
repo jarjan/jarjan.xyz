@@ -103,6 +103,9 @@
   --duration-fast: 0.15s;
   --duration-base: 0.2s;
   --duration-slow: 0.3s;
+
+  /* Native UI (scrollbars, buttons) follows the light or dark theme */
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -137,7 +140,7 @@ html {
   font-family: var(--font-sans);
   line-height: var(--leading-normal);
   -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
+  text-size-adjust: 100%;
   tab-size: 4;
 
   background-color: var(--color-bg);
@@ -152,6 +155,7 @@ body {
   margin: 0;
   line-height: inherit;
   min-height: 100vh;
+  min-height: 100dvh;
 
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -180,6 +184,12 @@ a:hover {
 .post-list li:hover a {
   color: var(--color-accent-strong);
   text-decoration-thickness: var(--underline-hover);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 h1,
@@ -246,8 +256,11 @@ details,
   border: var(--border-thin) solid var(--color-accent);
 }
 
-details summary::-webkit-details-marker,
-details summary::marker {
+summary::marker {
+  color: var(--color-accent);
+}
+
+summary::-webkit-details-marker {
   color: var(--color-accent);
 }
 
@@ -581,6 +594,10 @@ body > .disclaimer {
   line-height: var(--leading-relaxed);
 }
 
+.post :is(p, li, blockquote) {
+  text-wrap: pretty;
+}
+
 .post :is(h2, h3)[id] {
   scroll-margin-top: var(--space-4);
 }
@@ -622,7 +639,7 @@ body > .disclaimer {
   scroll-target-group: auto;
 }
 
-.toc a:target-current {
+.toc a:is(:target-current, .target-current) {
   color: var(--color-text);
   font-weight: var(--weight-semibold);
 }
@@ -648,7 +665,7 @@ body > .disclaimer {
     top: 0;
     right: calc(100% + var(--space-6));
     width: clamp(10rem, (100vw - var(--page-width)) / 2 - var(--space-7), 13rem);
-    max-height: calc(100vh - 2 * var(--space-5));
+    max-height: calc(100dvh - 2 * var(--space-5));
     overflow-y: auto;
   }
 
@@ -900,17 +917,15 @@ body > .disclaimer {
 }
 
 .sr-only {
-  border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important;
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
   white-space: nowrap !important;
+  border: 0 !important;
 }
 
 @media (min-width: 640px) {
@@ -1142,6 +1157,7 @@ body > .disclaimer {
 
 @media print {
   :root {
+    color-scheme: light;
     --color-bg: #fff;
     --color-text: #000;
     --color-text-muted: #4a5568;
@@ -1199,9 +1215,12 @@ body > .disclaimer {
     block-size: auto;
   }
 
-  details summary::-webkit-details-marker,
-  details summary::marker {
+  summary::marker {
     content: "";
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 
   details > summary {

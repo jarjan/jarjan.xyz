@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"/>
     <meta name="generator" content="{{ eleventy.generator }}"/>
     {% set pageTitle = title if title == t.name else title + ' | ' + t.name %}
     {% set pageUrl = 'https://jarjan.xyz' + page.url %}
@@ -43,6 +44,8 @@
     {% endfor %}
     {% endfor %}
     <link rel="stylesheet" href="/css/styles.css"/>
+    {# Hold the first paint (and a cross-page view transition) until the page content is parsed #}
+    <link rel="expect" href="#main" blocking="render"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     {% for social in socials %}{% if social.footer === false %}
     <link rel="me" href="{{ social.url }}"/>
@@ -73,7 +76,7 @@
       {% endif %}
     </header>
     <hr/>
-    <main class="content">
+    <main class="content" id="main">
       {{ content | safe }}
     </main>
     {# Posts render it inside the article; elsewhere it sits just above the footer #}
