@@ -142,6 +142,8 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   tab-size: 4;
+  /* Reserve the scrollbar's space so short and long pages share the same width */
+  scrollbar-gutter: stable;
 
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -691,6 +693,17 @@ body > .disclaimer {
     margin-top: var(--space-1);
     padding-left: var(--space-3);
   }
+}
+
+.content:has(.not-found) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centre the postcard in the space between header and footer */
+.not-found {
+  flex: 1;
+  justify-content: center;
 }
 
 .postcard {
