@@ -1,10 +1,7 @@
-// Places I've been, for the hidden /been/ page. Started from a Been app export.
-// After changing anything here, rerun scripts/been-globe.js to update the globe.
-//
-// Countries: [name, ISO 3166 alpha-2, alpha-3, numeric]
+// Rerun scripts/been-globe.js after changes.
+// Countries: [name, alpha-2, alpha-3, numeric]
 // Cities: [name, country alpha-2, latitude, longitude]
-// Divisions: first-level divisions count as visited when a city lies in one;
-// list others here as [country alpha-2, name as the globe data spells it]
+// Divisions: visited without a listed city, as [country alpha-2, name in the globe data]
 
 const countries = [
   ["Austria", "AT", "AUT", "040"],
@@ -33,7 +30,6 @@ const countries = [
 
 const divisions = [];
 
-// Where I live now, marked on the globe and in the list
 const home = "Berlin";
 
 const cities = [
@@ -113,7 +109,6 @@ const cities = [
   ["Turkistan", "KZ", 43.3, 68.25],
 ];
 
-// Regional indicator letters make the flag emoji
 const flag = (code) => String.fromCodePoint(...[...code].map((c) => 0x1f1a5 + c.charCodeAt(0)));
 
 export default {

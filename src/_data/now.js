@@ -1,5 +1,4 @@
-// "Now" statuses, newest first. Add a new entry at the top to update the intro line;
-// older entries are kept as history. url is optional and links the text.
+// Newest first; the first one shows on the home page. url is optional.
 export default [
   {
     date: new Date("2026-11-16"),

@@ -1,4 +1,3 @@
-// Social preview image for each blog post, at /og/<slug>.png
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import satori from "satori";
@@ -8,7 +7,7 @@ const require = createRequire(import.meta.url);
 const font = (family, subset, weight) =>
   readFileSync(require.resolve(`@fontsource/${family}/files/${family}-${subset}-${weight}-normal.woff`));
 
-// Satori only falls back between fonts with different names, so each subset gets its own
+// Satori only falls back between differently named fonts
 const subsets = ["latin", "latin-ext", "cyrillic", "cyrillic-ext"];
 const fonts = subsets.flatMap((subset) => [
   { name: `serif-${subset}`, data: font("source-serif-4", subset, 700), weight: 700 },

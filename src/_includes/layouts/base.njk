@@ -44,7 +44,7 @@
     {% endfor %}
     {% endfor %}
     <link rel="stylesheet" href="/css/styles.css"/>
-    {# Hold the first paint (and a cross-page view transition) until the page content is parsed #}
+    {# Wait for content before first paint and view transitions #}
     <link rel="expect" href="#main" blocking="render"/>
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Zharzhan Kulmyrza"/>
     {% for social in socials %}{% if social.footer === false %}
@@ -79,7 +79,7 @@
     <main class="content" id="main">
       {{ content | safe }}
     </main>
-    {# Posts render it inside the article; elsewhere it sits just above the footer #}
+    {# Posts render it inside the article #}
     {% if not page.url.startsWith('/blog/') %}
       {% include 'disclaimer.njk' %}
     {% endif %}

@@ -1,5 +1,4 @@
-// Used for the footer, rel="me" links and structured data.
-// footer: false keeps a profile out of the footer only.
+// footer: false hides a profile from the footer only
 export default [
   { name: "github", url: "https://github.com/jarjan" },
   { name: "linkedin", url: "https://linkedin.com/in/zharzhan" },

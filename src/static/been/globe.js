@@ -1,6 +1,4 @@
-// Spinning globe for /been/. Borders come from world.json and the d3-geo
-// bundle in geo.js (both made by scripts/been-globe.js), places from the
-// page's #been-data.
+// world.json and geo.js are built by scripts/been-globe.js
 (async () => {
   const { geoOrthographic, geoPath, feature, merge, mesh } = window.beenGeo;
   const figure = document.querySelector(".globe");
@@ -25,7 +23,6 @@
     const { countries, divisions } = topo.objects;
     const collection = (features) => ({ type: "FeatureCollection", features });
     return {
-      // One shape for all land, so borders aren't traced twice
       land: merge(topo, countries.geometries),
       visited: collection(feature(topo, countries).features.filter((f) => countryIds.has(f.id))),
       divisions: collection(feature(topo, divisions).features.filter((f) => f.properties.v)),
@@ -47,7 +44,6 @@
   const projection = geoOrthographic().precision(1);
   const path = geoPath(projection, ctx);
 
-  // View centre in degrees; starts between Europe and Kazakhstan
   const view = { lon: 40, lat: 32 };
   let size = 0;
   let dpr = 1;
@@ -126,7 +122,7 @@
       [city.x, city.y] = projection([city.lon, city.lat]);
     }
     const focus = selected || hovered;
-    // Home sits above the other cities, the focused city above everything
+    // Home above other cities, focused city on top
     const order = cities
       .filter((city) => city.z > 0 && city !== focus)
       .sort((a, b) => a.home - b.home);
@@ -137,7 +133,6 @@
       const big = city === focus || city.home;
       const scale = 0.6 + 0.4 * city.z;
       if (city.home) {
-        // A ring around the dot, like the legend key
         ctx.beginPath();
         ctx.arc(city.x, city.y, 7.5 * scale, 0, 2 * Math.PI);
         ctx.lineWidth = 1.5;
@@ -175,7 +170,6 @@
       for (const k in flight.to) view[k] = flight.from[k] + flight.to[k] * e;
       if (t === 1) flight = null;
     } else if (spinning()) {
-      // Ease back into the spin after the visitor lets go
       const ease = Math.min(Math.max((now - calmSince - RESUME) / 1000, 0), 1);
       view.lon = ((view.lon - SPIN * ease * dt + 540) % 360) - 180;
     }
@@ -191,7 +185,6 @@
     });
   }
 
-  // Turn to a city and hold it there, or let go with null
   function select(city) {
     selected = city;
     calmSince = performance.now();
@@ -256,7 +249,6 @@
     drag = null;
     calmSince = performance.now();
     canvas.classList.remove("is-dragging");
-    // Tapping a city turns to it, tapping anywhere else lets the globe spin again
     if (tapped) select(cityAt(event, event.pointerType === "mouse" ? 10 : 20));
     else request();
   };

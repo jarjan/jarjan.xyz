@@ -1,8 +1,6 @@
 @import "_fonts.css";
 
-/* Design tokens: components use only these */
 :root {
-  /* Colour (redefined for dark mode and print) */
   --color-bg: #f9fbfc;
   --color-text: #0f172a;
   --color-text-muted: #59667c;
@@ -11,7 +9,7 @@
   --color-accent-tint: rgba(89, 144, 220, 0.05);
   --color-border: #cce0ff;
 
-  /* Paper: printed cards, same in every theme */
+  /* Same in every theme */
   --paper: #fff;
   --paper-ink: #0f172a;
   --paper-ink-muted: #59667c;
@@ -20,7 +18,7 @@
   --paper-line: #cbd5e1;
   --paper-stamp: #c40f25;
 
-  /* Globe on /been/ (read by its canvas script) */
+  /* Read by globe.js */
   --globe-sea: #eef3fb;
   --globe-rim: #cce0ff;
   --globe-land: #d3dbe6;
@@ -30,7 +28,6 @@
   --globe-city: #c40f25;
   --globe-ring: #fff;
 
-  /* Type */
   --font-sans:
     "Source Sans 3",
     "Source Sans 3 Fallback",
@@ -74,7 +71,6 @@
 
   --tracking-caps: 0.08em;
 
-  /* Space */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -83,28 +79,23 @@
   --space-6: 2rem;
   --space-7: 3rem;
 
-  /* Layout */
   --page-width: 40rem;
   --page-gutter: var(--space-4);
 
-  /* Lines */
   --border-thin: 1px;
   --border-medium: 2px;
   --border-thick: 3px;
   --underline: 0.05rem;
   --underline-hover: 0.075rem;
 
-  /* Surfaces */
   --callout-padding: var(--space-2) var(--space-3);
   --shadow-card: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 6px 16px -6px rgba(15, 23, 42, 0.35);
   --shadow-card-lifted: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 12px 24px -8px rgba(15, 23, 42, 0.4);
 
-  /* Motion */
   --duration-fast: 0.15s;
   --duration-base: 0.2s;
   --duration-slow: 0.3s;
 
-  /* Native UI (scrollbars, buttons) follows the light or dark theme */
   color-scheme: light dark;
 }
 
@@ -142,7 +133,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   tab-size: 4;
-  /* Reserve the scrollbar's space so short and long pages share the same width */
+  /* Same width whether or not the page scrolls */
   scrollbar-gutter: stable;
 
   background-color: var(--color-bg);
@@ -162,7 +153,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-variant-numeric: lining-nums;
-  /* Break long words and URLs instead of scrolling sideways on phones */
   overflow-wrap: break-word;
 }
 
@@ -407,7 +397,7 @@ details > img {
   color: var(--color-text);
 }
 
-/* ʒ isn't in the Latin subset; a system font avoids loading latin-ext */
+/* Avoids loading latin-ext just for ʒ */
 .ipa {
   font-family: var(--font-system);
   font-size: 0.8em;
@@ -460,7 +450,6 @@ details > img {
   color: var(--color-text);
 }
 
-/* Make the whole row clickable */
 .post-list a::before {
   content: "";
   position: absolute;
@@ -485,7 +474,6 @@ details > img {
   line-height: var(--leading-snug);
 }
 
-/* Plain text with an underline, not a post title */
 .now-list a {
   font-weight: inherit;
 }
@@ -494,7 +482,7 @@ details > img {
   grid-template-columns: 1fr;
 }
 
-/* External-link arrow, a mask so it takes the text colour */
+/* Mask, so it takes the text colour */
 .project-list a::after {
   content: "";
   display: inline-block;
@@ -577,7 +565,6 @@ body > .disclaimer {
   margin: var(--space-4) 0 var(--page-gutter);
 }
 
-/* Decorative: empty alt text */
 .disclaimer::before {
   content: "✍️" / "";
 }
@@ -657,14 +644,14 @@ body > .disclaimer {
 }
 
 @media (min-width: 1000px) {
-  /* Shift the page right until the left margin fits the contents */
+  /* Make room for the contents on the left */
   body:has(.toc) :is(.header, .content, .footer) {
     width: calc(100% - 13rem);
     margin-left: max((100% - var(--page-width)) / 2, 13rem);
     margin-right: auto;
   }
 
-  /* The nav has no height, so it sticks for the whole article without pushing the text */
+  /* Zero height: sticks through the article without pushing text */
   .toc {
     position: sticky;
     top: var(--space-5);
@@ -702,7 +689,6 @@ body > .disclaimer {
   flex-direction: column;
 }
 
-/* Centre the postcard in the space between header and footer */
 .not-found {
   flex: 1;
   justify-content: center;
@@ -819,7 +805,6 @@ body > .disclaimer {
   max-width: 28rem;
   aspect-ratio: 1;
   cursor: grab;
-  /* Vertical swipes still scroll the page on touch screens */
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -875,7 +860,6 @@ body > .disclaimer {
   background-color: var(--globe-region);
 }
 
-/* A dot in a ring, as drawn on the globe */
 .globe__key--home::before {
   background-color: var(--globe-city);
   box-shadow:
@@ -958,7 +942,6 @@ body > .disclaimer {
   color: var(--color-text-muted);
 }
 
-/* Wide screens: the globe stays in view on the left while the list scrolls */
 @media (min-width: 1000px) {
   body:has(.been) {
     --page-width: 64rem;
@@ -998,7 +981,6 @@ body > .disclaimer {
     top: var(--space-5);
   }
 
-  /* Globe and legend fit the screen height */
   .globe__canvas {
     max-width: min(28rem, 100dvh - 2 * var(--space-5) - 3rem);
   }
@@ -1086,7 +1068,6 @@ body > .disclaimer {
     gap: var(--space-4);
   }
 
-  /* The copy wraps first so the social links stay on one line */
   .footer__copy {
     order: initial;
     flex: 1;
@@ -1299,7 +1280,6 @@ body > .disclaimer {
     padding-top: var(--space-2);
   }
 
-  /* Expand all <details> */
   details::details-content {
     content-visibility: visible;
     block-size: auto;
@@ -1319,7 +1299,6 @@ body > .disclaimer {
     font-weight: var(--weight-semibold);
   }
 
-  /* Keep scans to about a third of a page */
   details > img {
     display: block;
     width: auto;
@@ -1328,7 +1307,7 @@ body > .disclaimer {
     margin: 0 auto;
   }
 
-  /* Printers drop backgrounds, so draw the bar as a border */
+  /* Printers drop backgrounds */
   blockquote {
     border-left: var(--border-thick) solid var(--color-accent);
   }
@@ -1337,7 +1316,6 @@ body > .disclaimer {
     display: none;
   }
 
-  /* Spell out external URLs */
   .post a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.75em;

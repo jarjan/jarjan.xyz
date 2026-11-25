@@ -31,7 +31,7 @@ jobs:
         with:
           name: site
           path: _site
-      # Own absolute URLs point at production, which lags behind PRs; 403/429 are bot blocks
+      # Production lags behind PRs; 403/429 are bot blocks
       - uses: lycheeverse/lychee-action@v2
         with:
           args: >-

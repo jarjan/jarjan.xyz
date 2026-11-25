@@ -1,6 +1,4 @@
-// Table of contents scrollspy. Browsers with scroll-target-group mark the
-// current link with :target-current; others get a .target-current class.
-// Either way the current link also gets aria-current for screen readers.
+// Marks the current TOC link; .target-current is the :target-current fallback
 const links = [...document.querySelectorAll(".toc a")];
 const setCurrent = (current) => {
   for (const link of links) {
@@ -17,8 +15,7 @@ if (CSS.supports("scroll-target-group: auto")) {
   document.addEventListener("scrollend", () => setTimeout(sync, 100));
 } else {
   const headings = links.map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))));
-  // Like :target-current: the last heading above the top third of the
-  // screen, or the first one before any is
+  // Last heading above the top third, like :target-current
   const sync = () => {
     let index = 0;
     headings.forEach((heading, i) => {
@@ -26,8 +23,7 @@ if (CSS.supports("scroll-target-group: auto")) {
     });
     setCurrent(links[index]);
   };
-  // Everything above that line counts as intersecting, so this fires whenever
-  // a heading crosses it, in either direction
+  // Fires whenever a heading crosses that line
   const observer = new IntersectionObserver(sync, { rootMargin: "1000000px 0px -67% 0px" });
   for (const heading of headings) if (heading) observer.observe(heading);
 }

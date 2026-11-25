@@ -1,19 +1,8 @@
-// Builds the data behind the hidden /been/ globe:
-//   src/static/been/world.json  TopoJSON with every country and the visited
-//                               first-level administrative divisions
-//   src/static/been/geo.js      d3-geo and topojson-client, bundled: the site's
-//                               CSP only runs scripts it serves itself
-//   src/_data/divisions.json    visited divisions per country, for the page
-//
-// Rerun after changing src/_data/places.js:
-//
+// Builds world.json, geo.js (bundled, as the CSP only allows own scripts) and
+// divisions.json for /been/. Rerun after changing src/_data/places.js:
 //   npm i --no-save world-atlas@2 topojson-client@3 topojson-server@3 \
 //     topojson-simplify@3 d3-geo@3 polygon-clipping@0.15 esbuild@0.25
 //   node scripts/been-globe.js
-//
-// Countries come from Natural Earth (via world-atlas). Divisions come from
-// geoBoundaries, except where it does not have today's first-level divisions
-// (see OVERRIDES and fixKazakhstan). Downloads are cached in the OS temp dir.
 
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -41,12 +30,10 @@ const GB = "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/mai
 const NE_ADMIN1 =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson";
 
-// Simplification: drop points whose triangle, and rings whose area, is smaller
-// than this many steradians (1e-5 sr ≈ 400 km², about a pixel on the globe)
+// Steradians; 1e-5 ≈ 400 km², about a pixel on the globe
 const MIN_AREA = 1e-5;
 
-// geoBoundaries has statistical regions or outdated divisions for these, so
-// group Natural Earth's admin-1 units into today's first-level divisions instead
+// geoBoundaries is outdated for these, so group Natural Earth admin-1 units
 const NOR_2024 = {
   Hordaland: "Vestland",
   "Sogn og Fjordane": "Vestland",
@@ -66,7 +53,6 @@ const OVERRIDES = {
   NOR: (p) => (p.name in NOR_2024 ? NOR_2024[p.name] : p.name), // 15 counties since 2024
 };
 
-// English names for divisions that are shown on the page
 const ENGLISH = {
   Bayern: "Bavaria",
   Hessen: "Hesse",
@@ -127,7 +113,6 @@ function rewind(f) {
 
 const contains = (f, point) => geoContains(f, point);
 
-// Merge features that share a key into one, exactly, along shared borders
 function dissolve(features, key) {
   const groups = new Map();
   features.forEach((f, i) => {
@@ -148,10 +133,8 @@ function dissolve(features, key) {
   }));
 }
 
-// geoBoundaries still has Kazakhstan's regions from before 2018 and 2022:
-// Shymkent left South Kazakhstan (now Turkistan Region), and Abai, Jetisu and
-// Ulytau were cut from East Kazakhstan, Almaty and Karaganda regions. Each new
-// region is its old region intersected with its districts' outline.
+// geoBoundaries predates Kazakhstan's 2018 and 2022 regions: each new one is
+// its old region intersected with its districts' outline
 async function fixKazakhstan(regions) {
   const districts = (
     await download(`${GB}/KAZ/ADM2/geoBoundaries-KAZ-ADM2_simplified.geojson`, "KAZ-ADM2.json")
@@ -169,7 +152,7 @@ async function fixKazakhstan(regions) {
     // Districts leave out some towns; filling holes puts them back
     const outline = pc.union(...parts).map((poly) => [poly[0]]);
     const old = parent.geometry.coordinates;
-    // Slivers where the two datasets' borders disagree are dropped
+    // Drop slivers where the datasets disagree
     const keep = (multi) =>
       multi.filter(
         (poly) => area(rewind({ geometry: { type: "Polygon", coordinates: poly } }).geometry.coordinates[0]) > 5e-6,
@@ -281,7 +264,6 @@ for (const country of places.countries) {
   console.log(`${country.name}: ${list.length} divisions, visited ${visited[country.code].join(", ")}`);
 }
 
-// Only visited divisions are drawn, so only they are kept
 const full = topology(
   {
     countries: { type: "FeatureCollection", features: countries },
