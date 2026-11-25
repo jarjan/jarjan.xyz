@@ -162,6 +162,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-variant-numeric: lining-nums;
+  /* Break long words and URLs instead of scrolling sideways on phones */
+  overflow-wrap: break-word;
 }
 
 hr {
@@ -1081,16 +1083,18 @@ body > .disclaimer {
 
   .footer {
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0;
+    gap: var(--space-4);
   }
 
+  /* The copy wraps first so the social links stay on one line */
   .footer__copy {
     order: initial;
+    flex: 1;
   }
 
   .footer__links {
     display: block;
+    flex: none;
     text-align: right;
   }
 
