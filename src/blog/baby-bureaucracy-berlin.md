@@ -149,7 +149,7 @@ lang: kk
 [iso9]: https://en.wikipedia.org/wiki/ISO_9
 [kz-botschaft-geburtskunde]: https://www.gov.kz/memleket/entities/mfa-berlin/press/article/details/145552?directionId=_5455&lang=kk
 [kz-botschaft-passport]: https://www.gov.kz/memleket/entities/mfa-berlin/press/article/details/144999?directionId=_5455&lang=kk
-[kz-borschaft-ready-docs]: https://www.gov.kz/memleket/entities/mfa-berlin/documents/details/602342?lang=kk
+[kz-borschaft-ready-docs]: https://www.gov.kz/memleket/entities/mfa-berlin/activities/5455?lang=kk
 [berlin-passport]: https://service.berlin.de/dienstleistung/121151/
 [berlin-geburtskunde]: https://service.berlin.de/dienstleistung/318960/
 [berlin-apostille]: https://service.berlin.de/dienstleistung/320315/
