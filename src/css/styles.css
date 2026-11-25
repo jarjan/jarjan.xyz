@@ -1020,8 +1020,10 @@ body > .disclaimer {
     right: var(--space-7);
   }
 
+  /* Fits both languages' names, so the nav doesn't move */
   .header__name {
     flex: initial;
+    min-width: 11rem;
     font-size: var(--text-lg);
   }
 
@@ -1049,7 +1051,7 @@ body > .disclaimer {
     grid-column: 2;
     grid-row: 1 / span 4;
     margin-bottom: 0;
-    align-self: center;
+    align-self: start;
     width: 8rem;
     height: 8rem;
     border-width: 0.3rem;
