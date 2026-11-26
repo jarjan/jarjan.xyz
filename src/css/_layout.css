@@ -124,9 +124,15 @@ body > .disclaimer {
 }
 
 .footer__copy {
-  flex: 1 15rem;
+  flex: 1 13rem;
 }
 
 .footer__links a + a {
   margin-left: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer__links {
+    text-align: right;
+  }
 }
