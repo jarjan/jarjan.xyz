@@ -34,7 +34,8 @@
 }
 
 html {
-  font-size: 125%;
+  /* Not %: browsers can default to different sizes for Latin and Cyrillic */
+  font-size: 20px;
   font-family:
     "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
