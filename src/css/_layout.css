@@ -123,6 +123,10 @@ body > .disclaimer {
   line-height: 1.4;
 }
 
+.footer__copy {
+  flex: 1 15rem;
+}
+
 .footer__links a + a {
   margin-left: 0.5rem;
 }
