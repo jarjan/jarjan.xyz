@@ -12,13 +12,13 @@
   --line: #cce0ff;
 
   --shadow: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 6px 16px -6px rgba(15, 23, 42, 0.35);
-  --shadow-lifted: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 12px 24px -8px rgba(15, 23, 42, 0.4);
 
   --font-serif: "Source Serif 4", "Source Serif 4 Fallback", Georgia, "Times New Roman", serif;
   --page-width: 40rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode, on screen only: printouts stay light */
+@media screen and (prefers-color-scheme: dark) {
   :root {
     --bg: #1c1c1c;
     --text: #eeeeee;
@@ -100,6 +100,12 @@ a {
   text-underline-offset: 0.15em;
 }
 
+/* Grey links. :where() keeps them as weak as plain `a`, so a:hover below still wins */
+:where(.header__links, .subscribe, .toc, .footer) a,
+a:where(.header__lang) {
+  color: var(--muted);
+}
+
 a:hover {
   color: var(--accent-hover);
   text-decoration-thickness: 0.075rem;
@@ -119,21 +125,11 @@ details {
 }
 
 blockquote {
-  /* A bar on the left that doesn't push the text */
-  box-shadow: inset 3px 0 var(--accent);
+  border-left: 3px solid var(--accent);
 }
 
 details {
   border: 1px solid var(--accent);
-}
-
-summary::marker {
-  color: var(--accent);
-}
-
-/* Safari */
-summary::-webkit-details-marker {
-  color: var(--accent);
 }
 
 details > img {
@@ -158,13 +154,10 @@ details > img {
 
 /* Hidden, but read by screen readers */
 .sr-only {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip-path: inset(50%) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

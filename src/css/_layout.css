@@ -47,14 +47,6 @@
   width: 100%;
 }
 
-.header__links a {
-  color: var(--muted);
-}
-
-.header__links a:hover {
-  color: var(--accent-hover);
-}
-
 .header__links a.active {
   color: var(--text);
   font-weight: 600;
@@ -63,12 +55,6 @@
 .header__lang {
   margin-left: auto;
   font-size: 0.75rem;
-  text-align: right;
-  color: var(--muted);
-}
-
-.header__lang:hover {
-  color: var(--accent-hover);
 }
 
 @media (min-width: 640px) {
@@ -133,11 +119,11 @@ body > .disclaimer {
   margin: 1rem 0;
 }
 
-/* Footer */
+/* Footer: copyright and links side by side, stacked when they don't fit */
 
 .footer {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
@@ -148,65 +134,6 @@ body > .disclaimer {
   line-height: 1.4;
 }
 
-/* On phones the copyright goes below the links */
-.footer__copy {
-  order: 1;
-}
-
-.footer__copy a {
-  color: inherit;
-}
-
-.footer__copy a:hover {
-  color: var(--accent-hover);
-}
-
-.footer__links {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  gap: 0.5rem 0.75rem;
-}
-
-.footer__links a {
-  color: var(--muted);
-}
-
-.footer__links a:hover {
-  color: var(--accent-hover);
-}
-
-/* The email, on its own line */
-.footer__links a:first-child {
-  flex-basis: 100%;
-  color: var(--text);
-}
-
-.footer__links br {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .footer {
-    flex-direction: row;
-  }
-
-  .footer__copy {
-    order: initial;
-    flex: 1;
-  }
-
-  .footer__links {
-    display: block;
-    flex: none;
-    text-align: right;
-  }
-
-  .footer__links a:not(:first-child) {
-    margin-left: 0.5rem;
-  }
-
-  .footer__links br {
-    display: inline;
-  }
+.footer__links a + a {
+  margin-left: 0.5rem;
 }

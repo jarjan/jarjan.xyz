@@ -18,97 +18,28 @@
     scroll-behavior: smooth;
   }
 
-  a {
-    transition:
-      color 0.15s ease,
-      text-decoration-thickness 0.15s ease;
-  }
-
-  /* Slide <details> open and closed */
-  @supports (interpolate-size: allow-keywords) {
-    details {
-      interpolate-size: allow-keywords;
-    }
-
-    details::details-content {
-      block-size: 0;
-      overflow-y: clip;
-      transition:
-        block-size 0.3s ease,
-        content-visibility 0.3s allow-discrete;
-    }
-
-    details[open]::details-content {
-      block-size: auto;
-    }
-  }
-
-  /* Flash the heading a table of contents link jumped to */
-  .post :is(h2, h3):target {
-    animation: target-highlight 1.5s ease-out;
-  }
-
-  /* 👋 waves once on load, and again on hover */
+  /* 👋 waves once on load */
   .wave {
     display: inline-block;
     transform-origin: 70% 70%;
     animation: wave 1.2s ease-in-out 0.4s;
   }
 
-  .wave:hover {
-    animation-name: wave-again;
-  }
-
   /* Tilted cards straighten up on hover */
   .header__logo svg,
   .intro__photo,
   .postcard {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
   .header__logo:hover svg,
   .intro__photo:hover,
   .postcard:hover {
     transform: rotate(0);
-    box-shadow: var(--shadow-lifted);
-  }
-}
-
-@keyframes target-highlight {
-  from {
-    background-color: var(--tint);
-    box-shadow: 0 0 0 0.25rem var(--tint);
   }
 }
 
 @keyframes wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  15%,
-  45% {
-    transform: rotate(14deg);
-  }
-  30% {
-    transform: rotate(-8deg);
-  }
-  60% {
-    transform: rotate(-4deg);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-}
-
-/* Same as wave: a new name is what makes it play again on hover */
-@keyframes wave-again {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
   15%,
   45% {
     transform: rotate(14deg);

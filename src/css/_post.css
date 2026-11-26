@@ -58,14 +58,6 @@
   line-height: 1.5;
 }
 
-.toc a {
-  color: var(--muted);
-}
-
-.toc a:hover {
-  color: var(--accent-hover);
-}
-
 /* .target-current is added by js/toc.js where :target-current isn't supported */
 .toc a:is(:target-current, .target-current) {
   color: var(--text);

@@ -12,7 +12,8 @@
   --globe-ring: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode, on screen only: printouts stay light */
+@media screen and (prefers-color-scheme: dark) {
   :root {
     --globe-sea: #23272e;
     --globe-rim: #424242;
