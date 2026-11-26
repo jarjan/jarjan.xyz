@@ -1,7 +1,4 @@
-/* Everything that moves. Skipped when the system asks for reduced motion */
-
 @media (prefers-reduced-motion: no-preference) {
-  /* Cross-fade between pages; the header stays put */
   @view-transition {
     navigation: auto;
   }
@@ -18,14 +15,12 @@
     scroll-behavior: smooth;
   }
 
-  /* 👋 waves once on load */
   .wave {
     display: inline-block;
     transform-origin: 70% 70%;
     animation: wave 1.2s ease-in-out 0.4s;
   }
 
-  /* Tilted cards straighten up on hover */
   .header__logo svg,
   .intro__photo,
   .postcard {

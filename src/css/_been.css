@@ -1,6 +1,4 @@
-/* /been/: stats, spinning globe and the list of places */
-
-/* Globe colours, read by been/globe.js */
+/* Read by been/globe.js */
 :root {
   --globe-sea: #eef3fb;
   --globe-rim: #cce0ff;
@@ -12,7 +10,6 @@
   --globe-ring: #fff;
 }
 
-/* Dark mode, on screen only: printouts stay light */
 @media screen and (prefers-color-scheme: dark) {
   :root {
     --globe-sea: #23272e;
@@ -45,8 +42,6 @@
   color: var(--muted);
 }
 
-/* Globe */
-
 .globe {
   position: relative;
   display: grid;
@@ -73,7 +68,6 @@
   cursor: grabbing;
 }
 
-/* City name that pops up over the globe */
 .globe__label {
   position: absolute;
   left: 0;
@@ -99,7 +93,6 @@
   color: var(--muted);
 }
 
-/* Coloured dot before each legend item */
 .globe__key::before {
   content: "";
   display: inline-block;
@@ -118,7 +111,6 @@
   background-color: var(--globe-region);
 }
 
-/* A dot with a ring around it */
 .globe__key--home::before {
   margin-right: calc(0.25rem + 0.22em);
   margin-left: 0.22em;
@@ -128,8 +120,6 @@
     0 0 0 0.22em var(--globe-city);
 }
 
-/* List of places */
-
 .been__list {
   display: grid;
   margin: 0;
@@ -137,7 +127,6 @@
   list-style: none;
 }
 
-/* Flag in a narrow column, details next to it */
 .been__country {
   display: grid;
   grid-template-columns: 2rem 1fr;
@@ -172,7 +161,6 @@
   color: var(--globe-city);
 }
 
-/* City names are buttons that spin the globe; styled like dotted links */
 .been__city {
   padding: 0;
   font: inherit;
@@ -201,7 +189,6 @@
   color: var(--muted);
 }
 
-/* Wide screens: globe on the left, list on the right */
 @media (min-width: 1000px) {
   body:has(.been) {
     --page-width: 64rem;

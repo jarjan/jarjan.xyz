@@ -1,14 +1,9 @@
-/*
-  The only stylesheet the site loads. The build (Lightning CSS) inlines these
-  files into one, in this order, so a later file wins over an earlier one.
-  Files starting with "_" are not published on their own.
-*/
-@import "_fonts.css"; /* Source Sans 3 and Source Serif 4 */
-@import "_base.css"; /* colours, plain HTML elements */
-@import "_layout.css"; /* header, page width, footer, disclaimer */
-@import "_home.css"; /* intro, post, now and project lists */
-@import "_post.css"; /* blog posts and their table of contents */
-@import "_been.css"; /* /been/ page with the globe */
-@import "_404.css"; /* the postcard on the 404 page */
-@import "_motion.css"; /* animations, off for people who prefer less motion */
+@import "_fonts.css";
+@import "_base.css";
+@import "_layout.css";
+@import "_home.css";
+@import "_post.css";
+@import "_been.css";
+@import "_404.css";
+@import "_motion.css";
 @import "_print.css";
