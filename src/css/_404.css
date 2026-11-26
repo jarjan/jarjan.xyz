@@ -1,0 +1,120 @@
+/* 404 page: a postcard, always light like real paper */
+
+/* Centre the postcard vertically */
+.content:has(.not-found) {
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found {
+  flex: 1;
+  justify-content: center;
+}
+
+.postcard {
+  position: relative;
+  display: grid;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  color: #0f172a;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(-2deg);
+}
+
+.postcard a {
+  color: #2f6bbf;
+}
+
+/* Front: big 404 */
+.postcard__picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  background-color: #eef3fb;
+}
+
+.postcard__code {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #2f6bbf;
+}
+
+.postcard__greeting {
+  margin-top: 0.5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #59667c;
+}
+
+/* Back: stamp, postmark and address lines */
+.postcard__back {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 5rem;
+}
+
+.postcard__stamp {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.25rem;
+  border: 2px dashed #cbd5e1;
+}
+
+.postcard__postmark {
+  position: absolute;
+  top: 1.25rem;
+  right: 2.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #c40f25;
+  border: 3px double #c40f25;
+  opacity: 0.85;
+  transform: rotate(-12deg);
+}
+
+.postcard__line {
+  min-height: 1.5rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+/* Front and back side by side */
+@media (min-width: 640px) {
+  .postcard {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 1rem 2rem;
+  }
+
+  .postcard__back {
+    min-height: 0;
+    padding: 4.25rem 0 0.5rem 1.5rem;
+    border-left: 1px solid #cbd5e1;
+  }
+
+  .postcard__stamp {
+    top: 0;
+  }
+
+  .postcard__postmark {
+    top: 0.75rem;
+    right: 3rem;
+  }
+}

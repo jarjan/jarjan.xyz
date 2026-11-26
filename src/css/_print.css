@@ -1,0 +1,136 @@
+/* Printing: black on white, no navigation, everything expanded */
+
+@page {
+  margin: 1.5cm 1.75cm;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #fff;
+    --text: #000;
+    --muted: #4a5568;
+    --accent: #1f4f94;
+    --accent-hover: #1f4f94;
+    --line: #cbd5e1;
+  }
+
+  html {
+    font-size: 11pt;
+  }
+
+  body {
+    display: block;
+    min-height: 0;
+  }
+
+  /* Paper has its own margins */
+  .header,
+  .content,
+  .footer {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header {
+    padding-top: 0;
+  }
+
+  .footer {
+    padding-bottom: 0;
+  }
+
+  body > .disclaimer {
+    width: auto;
+    max-width: none;
+  }
+
+  .header__links,
+  .header__lang,
+  .subscribe,
+  .toc,
+  body > hr:first-of-type {
+    display: none;
+  }
+
+  /* Printers drop shadows and backgrounds: use borders instead */
+  .header__logo svg,
+  .intro__photo {
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  blockquote {
+    box-shadow: none;
+    border-left: 3px solid var(--accent);
+  }
+
+  .intro {
+    padding-top: 0.5rem;
+  }
+
+  /* Open every <details>, with the summary as a plain caption */
+  details::details-content {
+    content-visibility: visible;
+    block-size: auto;
+  }
+
+  summary::marker {
+    content: "";
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details > summary {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  details > img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 9cm;
+    margin: 0 auto;
+  }
+
+  /* Print where links go */
+  .post a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+
+  /* Don't split these across pages */
+  h1,
+  h2,
+  summary {
+    break-after: avoid;
+  }
+
+  blockquote,
+  details,
+  img,
+  .post-list li,
+  .postcard,
+  .footer {
+    break-inside: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

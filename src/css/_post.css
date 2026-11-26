@@ -1,0 +1,114 @@
+/* Blog posts */
+
+.post > header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post > p,
+.post > blockquote,
+.post > details {
+  margin: 0.25rem 0 1rem;
+}
+
+.post > p,
+.post li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.post :is(p, li, blockquote) {
+  text-wrap: pretty;
+}
+
+.post h2 {
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* Room above a heading when jumping to it */
+.post :is(h2, h3)[id] {
+  scroll-margin-top: 1rem;
+}
+
+/* Table of contents: above the post, or in the left margin on wide screens */
+
+.toc {
+  margin-bottom: 1.5rem;
+}
+
+.toc__title {
+  margin-bottom: 0.5rem;
+}
+
+/* Lets the browser mark the link of the section being read */
+.toc__list {
+  scroll-target-group: auto;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.toc li {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.toc a {
+  color: var(--muted);
+}
+
+.toc a:hover {
+  color: var(--accent-hover);
+}
+
+/* .target-current is added by js/toc.js where :target-current isn't supported */
+.toc a:is(:target-current, .target-current) {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (min-width: 1000px) {
+  /* Make room for the contents on the left */
+  body:has(.toc) :is(.header, .content, .footer) {
+    width: calc(100% - 13rem);
+    margin-left: max((100% - var(--page-width)) / 2, 13rem);
+    margin-right: auto;
+  }
+
+  /* Zero height: sticks through the article without pushing text */
+  .toc {
+    position: sticky;
+    top: 1.5rem;
+    height: 0;
+    margin: 0;
+  }
+
+  .toc__inner {
+    position: absolute;
+    top: 0;
+    right: calc(100% + 2rem);
+    width: clamp(10rem, (100vw - var(--page-width)) / 2 - 3rem, 13rem);
+    max-height: calc(100dvh - 3rem);
+    overflow-y: auto;
+  }
+
+  .toc ol {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .toc li {
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .toc li ol {
+    margin-top: 0.25rem;
+    padding-left: 0.75rem;
+  }
+}

@@ -1,0 +1,212 @@
+/* Header, main column, footer and the disclaimer box: on every page */
+
+/* Header */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header + hr {
+  margin: 0;
+}
+
+.header__logo {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.header__logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--shadow);
+  transform: rotate(-3deg);
+}
+
+.header__name {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* On phones the nav goes on its own row, below the name */
+.header__links {
+  display: flex;
+  order: 1;
+  gap: 1rem;
+  width: 100%;
+}
+
+.header__links a {
+  color: var(--muted);
+}
+
+.header__links a:hover {
+  color: var(--accent-hover);
+}
+
+.header__links a.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.header__lang {
+  margin-left: auto;
+  font-size: 0.75rem;
+  text-align: right;
+  color: var(--muted);
+}
+
+.header__lang:hover {
+  color: var(--accent-hover);
+}
+
+@media (min-width: 640px) {
+  .header + hr {
+    display: none;
+  }
+
+  /* Fits both languages' names, so the nav doesn't move */
+  .header__name {
+    flex: initial;
+    min-width: 11rem;
+    font-size: 1.25rem;
+  }
+
+  .header__links {
+    order: initial;
+    flex: 1;
+    margin-left: 1rem;
+  }
+}
+
+/* Main column */
+
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page h2 {
+  margin-bottom: 0.25rem;
+}
+
+/* Disclaimer: at the end of posts, and above the footer elsewhere */
+
+.disclaimer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  margin: 2rem 0 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  background-color: var(--tint);
+  border: 1px solid var(--accent);
+}
+
+.disclaimer::before {
+  content: "✍️" / "";
+}
+
+body > .disclaimer {
+  width: calc(100% - 2rem);
+  max-width: calc(var(--page-width) - 2rem);
+  margin: 1rem 0;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* On phones the copyright goes below the links */
+.footer__copy {
+  order: 1;
+}
+
+.footer__copy a {
+  color: inherit;
+}
+
+.footer__copy a:hover {
+  color: var(--accent-hover);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 0.5rem 0.75rem;
+}
+
+.footer__links a {
+  color: var(--muted);
+}
+
+.footer__links a:hover {
+  color: var(--accent-hover);
+}
+
+/* The email, on its own line */
+.footer__links a:first-child {
+  flex-basis: 100%;
+  color: var(--text);
+}
+
+.footer__links br {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer__copy {
+    order: initial;
+    flex: 1;
+  }
+
+  .footer__links {
+    display: block;
+    flex: none;
+    text-align: right;
+  }
+
+  .footer__links a:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+
+  .footer__links br {
+    display: inline;
+  }
+}

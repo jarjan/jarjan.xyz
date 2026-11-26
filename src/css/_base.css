@@ -1,0 +1,170 @@
+/* Colours and plain HTML elements */
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #f9fbfc;
+  --text: #0f172a;
+  --muted: #59667c;
+  --accent: #2f6bbf;
+  --accent-hover: #003878;
+  --tint: rgba(89, 144, 220, 0.05);
+  --line: #cce0ff;
+
+  --shadow: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 6px 16px -6px rgba(15, 23, 42, 0.35);
+  --shadow-lifted: 0 0 0 1px rgba(15, 23, 42, 0.08), 0 12px 24px -8px rgba(15, 23, 42, 0.4);
+
+  --font-serif: "Source Serif 4", "Source Serif 4 Fallback", Georgia, "Times New Roman", serif;
+  --page-width: 40rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1c;
+    --text: #eeeeee;
+    --muted: #94a3b8;
+    --accent: #7aa7e6;
+    --accent-hover: #9ac4ff;
+    --tint: rgba(89, 144, 220, 0.25);
+    --line: #424242;
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem = 20px */
+  font-size: 125%;
+  font-family:
+    "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  /* Same width whether or not the page scrolls */
+  scrollbar-gutter: stable;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-wrap: break-word;
+  font-variant-numeric: lining-nums;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
+}
+
+small {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.05rem;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration-thickness: 0.075rem;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+blockquote,
+details {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--tint);
+}
+
+blockquote {
+  /* A bar on the left that doesn't push the text */
+  box-shadow: inset 3px 0 var(--accent);
+}
+
+details {
+  border: 1px solid var(--accent);
+}
+
+summary::marker {
+  color: var(--accent);
+}
+
+/* Safari */
+summary::-webkit-details-marker {
+  color: var(--accent);
+}
+
+details > img {
+  width: 100%;
+  height: auto;
+}
+
+/* Small uppercase labels */
+.badge,
+.intro__now-label,
+.toc__title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge {
+  color: var(--muted);
+}
+
+/* Hidden, but read by screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
